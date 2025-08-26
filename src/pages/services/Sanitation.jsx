@@ -13,10 +13,11 @@ export default function Sanitation() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             Silo Sanitation
           </h2>
+
           <p className="mt-4 text-slate-600">
             Your silo can harbor bacteria, germs, and other contaminants that threaten product
             quality and worker safety. Our OSHA-approved teams deliver advanced sanitation programs
-            nationwide—backed by years of experience, specialized equipment, and strict safety protocols.
+            nationwide—backed by specialized equipment and strict safety protocols.
           </p>
 
           {/* quick badges */}
@@ -35,6 +36,35 @@ export default function Sanitation() {
                 {text}
               </span>
             ))}
+          </div>
+
+          {/* Expanded "When to Sanitize" */}
+          <div className="mt-8">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+              When to Sanitize
+            </h3>
+            <ul className="mt-3 space-y-2 text-slate-700">
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                Between product changeovers
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                After mold, bad grain, or infestation events
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                As part of scheduled GMP or quality audits
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                When residues or odors indicate contamination risk
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                Following extended downtime before restarting operations
+              </li>
+            </ul>
           </div>
         </div>
 
