@@ -11,8 +11,11 @@ export default function Nav() {
         <header className="bg-white sticky top-0 z-50 shadow-sm">
             <Container className="flex h-16 items-center justify-between">
                 <NavLink to="/" className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-lg bg-green-600" aria-hidden />
-                    <span className="text-lg font-bold tracking-tight">Silo Clean Pro</span>
+                    <img
+                        src="/SiloCleanProLogo.svg"
+                        alt="Silo Clean Pro"
+                        className="h-11 w-auto"
+                    />
                 </NavLink>
                 <nav className="hidden md:flex items-center gap-1">
                     <NavLink to="/about" className={linkClass}>
