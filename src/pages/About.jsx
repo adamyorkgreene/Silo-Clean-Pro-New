@@ -94,7 +94,7 @@ export default function About() {
           {/* Left: text + trust === same pattern */}
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-              About GreeneServices
+              About Greene Services, Inc.
             </h1>
             <p className="mt-4 text-lg text-slate-800">
               GreeneServices provides nationwide silo cleaning and inspection with OSHA-approved,
@@ -119,14 +119,35 @@ export default function About() {
           </div>
 
           {/* Right: brand card */}
-          <div className="w-2/3 justify-self-center sm:justify-self-end">
-            <div className="rounded-2xl border bg-white/70 backdrop-blur-sm p-4 shadow-sm ring-1 ring-white/40">
-              <img
-                src="/og-image-gs-alpha.png"
-                alt="Greene Services, Inc."
-                className="max-h-28 h-auto w-auto object-contain"
-                loading="lazy"
-              />
+          <div className="w-2/3 justify-self-center h-full flex flex-col items-center justify-evenly">
+            <img
+              src="/greene-services-black.png"
+              alt="Greene Services, Inc."
+              className="max-h-28 h-auto w-auto object-contain mx-auto"
+              loading="lazy"
+            />
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-wider mb-4 text-slate-800">
+                Explore our other divisions
+              </p>
+              <a
+                href="https://GreeneServices.us"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+              >
+                Visit GreeneServices.us
+                <svg
+                  viewBox="0 0 20 20"
+                  className="ml-1 h-4 w-4"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11 3h6v6h-2V6.41l-7.3 7.3-1.4-1.42 7.3-7.29H11V3zM5 5h3V3H5a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2v-3h-2v3H5V5z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -135,18 +156,58 @@ export default function About() {
       {/* INTERIOR SECTIONS — keep your existing About content inside a padded Page */}
       <Page title={null}>
         {/* Side-by-side image + copy */}
-        <section className="mt-12 grid items-center gap-8 md:grid-cols-2">
+        <section className="mt-12 grid items-center gap-10 md:grid-cols-2">
+          {/* Copy column */}
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">
               Experience You Can Trust
             </h2>
+
             <p className="mt-4 text-slate-600">
-              Our crews have decades of combined experience handling confined-space silo
-              cleaning across industries. From mold remediation and bad grain removal to
-              full-scale media blasting, GreeneServices delivers safe, efficient solutions
-              nationwide.
+              Our confined-space teams handle the toughest silo conditions—from heavy hang-ups
+              and bad grain to mold remediation and corrosion. We pair OSHA-approved
+              entry procedures with modern equipment to get your system safe, compliant,
+              and back online quickly.
             </p>
+
+            {/* Quick capability bullets (concise, not fluff) */}
+            <ul className="mt-4 space-y-2 text-slate-700 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                Confined-space certified technicians (licensed & insured)
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                Bin whips & high-volume vacuum systems for deep cleaning
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                Hydro, soda, and dry-ice blasting for stubborn buildup
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                Documentation with recommendations after every job
+              </li>
+            </ul>
+
+            {/* Compact stats row */}
+            <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div className="text-xl font-bold text-green-700">24/7</div>
+                <p className="text-[11px] text-slate-600">Emergency</p>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-green-700">&gt;10 yrs</div>
+                <p className="text-[11px] text-slate-600">Nationwide</p>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-green-700">Lower 48</div>
+                <p className="text-[11px] text-slate-600">Coverage</p>
+              </div>
+            </div>
           </div>
+
+          {/* Image column */}
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <img
               src="/silo_img_1.png"
