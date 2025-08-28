@@ -154,9 +154,9 @@ export default function About() {
       </section>
 
       {/* INTERIOR SECTIONS — keep your existing About content inside a padded Page */}
-      <Page title={null}>
+      <Page title={null} noChildMargin={true}>
         {/* Side-by-side image + copy */}
-        <section className="mt-12 grid items-center gap-10 md:grid-cols-2">
+        <section className="grid items-center gap-10 md:grid-cols-2">
           {/* Copy column */}
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">
@@ -208,7 +208,7 @@ export default function About() {
           </div>
 
           {/* Image column */}
-          <div className="overflow-hidden rounded-2xl shadow-lg">
+          <div className="overflow-hidden rounded-2xl shadow-lg w-[70%] mx-auto">
             <img
               src="/silo_img_1.png"
               alt="GreeneServices silo cleaning team at work"

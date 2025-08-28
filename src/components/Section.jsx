@@ -1,6 +1,6 @@
 import Container from "./Container.jsx";
 
-export default function Section({ kicker, title, subtitle, children, className = "" }) {
+export default function Section({ kicker, title, subtitle, children, className = "", noChildMargin = false }) {
     return (
         <section className={`py-16 sm:py-20 ${className}`}>
             <Container>
@@ -19,7 +19,7 @@ export default function Section({ kicker, title, subtitle, children, className =
                         {subtitle}
                     </p>
                 )}
-                <div className="mt-8">{children}</div>
+                <div className={noChildMargin ? "" : "mt-8"}>{children}</div>
             </Container>
         </section>
     );
