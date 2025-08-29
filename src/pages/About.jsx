@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { ShieldCheck, Phone, Clock, HardHat, MapPin } from "lucide-react";
+import { ShieldCheck, Clock, HardHat, MapPin } from "lucide-react";
 import Page from "./Page.jsx";
+import QuoteCTA from "../components/QuoteCTA.jsx";
+import ServiceChips from "../components/ServiceChips.jsx";
 
 /** EXACT same scaler as Home */
 function HeroBackgroundScaledIframe({
@@ -288,45 +290,11 @@ export default function About() {
         </section>
 
         {/* Additional services */}
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Additional Services We Offer
-          </h2>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "Plastic & Injection Molding Silo Cleaning",
-              "Media Blasting",
-              "Sanitizing Applications",
-              "Surface Preparation",
-            ].map((chip) => (
-              <span
-                key={chip}
-                className="rounded-full border bg-white px-3 py-1 text-sm text-slate-700 shadow-sm"
-              >
-                {chip}
-              </span>
-            ))}
-          </div>
-        </section>
+        <ServiceChips />
 
         {/* CTA band */}
-        <section className="mt-12">
-          <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Questions or need rapid response?
-              </h3>
-              <p className="text-slate-600">Talk to a silo specialist now.</p>
-            </div>
-            <a
-              href="tel:8886236050"
-              className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 font-semibold text-white shadow hover:bg-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
-            >
-              <Phone className="h-5 w-5" />
-              888-623-6050
-            </a>
-          </div>
-        </section>
+        <QuoteCTA />
+
       </Page>
     </main>
   );

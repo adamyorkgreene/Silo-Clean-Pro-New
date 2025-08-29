@@ -1,46 +1,228 @@
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { ShieldCheck, MapPin, Clock, SprayCan, ClipboardCheck, HardHat } from "lucide-react";
-import Page from "./Page.jsx";
-import WhyChooseUs from "../components/WhyChooseUs.jsx";
+import { Brush, Search, ShieldCheck, Wrench } from "lucide-react";
+import Page from "./Page.jsx"
+import Section from "../components/Section.jsx";
 import ServiceChips from "../components/ServiceChips.jsx";
 import QuoteCTA from "../components/QuoteCTA.jsx";
+import WhyChooseUs from "../components/WhyChooseUs.jsx";
+
+/** Background Stream iframe that auto-scales to cover.
+ *  Desktop (>=1050px): anchor to TOP (crop bottom more).
+ *  Mobile  (<1050px): centered with optional offsetYPercent.
+ */
+function HeroBackgroundScaledIframe({
+  src,
+  videoAspect = 16 / 9,
+  className = "",
+  overlay = true,
+  opacity = 0.4,
+  fudgePct = 0.30,
+  offsetYPercent = 10,
+  desktopBreakpoint = 1050,
+}) {
+  const wrapRef = useRef(null);
+  const [scale, setScale] = useState(1);
+  const [useTopAnchor, setUseTopAnchor] = useState(false);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+
+    const updateScale = () => {
+      const { width, height } = el.getBoundingClientRect();
+      if (!width || !height) return;
+      const containerAspect = width / height;
+      const base =
+        containerAspect > videoAspect
+          ? containerAspect / videoAspect
+          : videoAspect / containerAspect;
+      setScale(base * (1 + fudgePct));
+    };
+
+    const updateAnchor = () => {
+      const vw = window.innerWidth || document.documentElement.clientWidth;
+      setUseTopAnchor(vw >= desktopBreakpoint);
+    };
+
+    const ro = new ResizeObserver(updateScale);
+    ro.observe(el);
+    updateScale();
+    updateAnchor();
+
+    window.addEventListener("resize", updateAnchor);
+    window.addEventListener("orientationchange", updateAnchor);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateAnchor);
+      window.removeEventListener("orientationchange", updateAnchor);
+    };
+  }, [videoAspect, fudgePct, desktopBreakpoint]);
+
+  const baseStyle = {
+    width: "100%",
+    height: "100%",
+    transformOrigin: useTopAnchor ? "center top" : "center",
+    transform: useTopAnchor
+      ? `translate(-50%, -15%) scale(${scale})`
+      : `translate(-50%, -50%) scale(${scale})`,
+    top: useTopAnchor ? 0 : `calc(50% + ${offsetYPercent}%)`,
+    left: "50%",
+    position: "absolute",
+  };
+
+  return (
+    <div ref={wrapRef} className={`absolute inset-0 overflow-hidden ${className}`}>
+      <div style={baseStyle}>
+        <iframe
+          src={src}
+          className="w-full h-full pointer-events-none border-0"
+          style={{ opacity }}
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+          allowFullScreen
+          title="Services Background Video"
+        />
+      </div>
+      {overlay && <div className="absolute inset-0 bg-black/20" />}
+    </div>
+  );
+}
 
 export default function ServicesIndex() {
   return (
-    <Page title="Services">
-      {/* Intro */}
-      <section>
-        <p className="text-lg text-slate-600 max-w-3xl">
-          We provide silo cleaning, inspection, sanitation, maintenance, and specialized cleaning
-          for plastic &amp; injection molding operations. Our technicians are OSHA-approved and
-          confined-space certified—serving the lower 48 with 24/7 response.
-        </p>
-      </section>
+    <main className="bg-slate-50">
+      {/* HERO (same pattern as Home/About) */}
+      <section className="relative isolate overflow-hidden">
+        <HeroBackgroundScaledIframe
+          src="https://customer-7l16vj4uw6jxacav.cloudflarestream.com/ef99151817ac90f0a387d5dab5dd2426/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-7l16vj4uw6jxacav.cloudflarestream.com%2Fef99151817ac90f0a387d5dab5dd2426%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+          videoAspect={16 / 9}
+          fudgePct={0.30}
+          offsetYPercent={10}
+          overlay={true}
+        />
 
-      {/* Quick service buckets */}
-      <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          { to: "/services/cleaning", title: "Silo Cleaning", icon: SprayCan, desc: "Hang-ups, bad grain, bin whips, vacs, exterior cleaning & blasting." },
-          { to: "/services/inspection", title: "Inspection", icon: ClipboardCheck, desc: "Structural & safety checks, water intrusion, corrosion, reporting." },
-          { to: "/services/sanitation", title: "Sanitation", icon: ShieldCheck, desc: "Infestation mitigation, swab testing, full sanitation programs." },
-        ].map(({ to, title, icon: Icon, desc }) => (
-          <NavLink key={to} to={to} className="group rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition">
-            <div className="flex items-center gap-3">
-              <Icon className="h-5 w-5 text-green-600" />
-              <h3 className="font-semibold text-slate-900">{title}</h3>
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 grid items-center gap-8 py-16 lg:grid-cols-2 lg:py-24">
+          {/* Left: headline, intro, CTAs */}
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+              Services
+            </h1>
+            <p className="mt-4 text-lg text-slate-800 max-w-2xl">
+              Silo cleaning, inspection, sanitation, and maintenance—delivered nationwide by
+              OSHA-approved, confined-space certified teams. Get rapid response and proven results.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <NavLink
+                to="/services/cleaning"
+                className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+              >
+                Explore Cleaning
+              </NavLink>
+              <NavLink
+                to="/services/inspection"
+                className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+              >
+                Inspection
+              </NavLink>
+              <NavLink
+                to="/services/sanitation"
+                className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+              >
+                Sanitation
+              </NavLink>
+              <NavLink
+                to="/services/maintenance"
+                className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+              >
+                Maintenance
+              </NavLink>
             </div>
-            <p className="mt-2 text-sm text-slate-600">{desc}</p>
-            <span className="mt-3 inline-flex text-sm font-semibold text-green-700">Learn more →</span>
-          </NavLink>
-        ))}
+          </div>
+
+          {/* Right: keep the same hero image block as Home */}
+          <div className="w-2/3 m-auto text-center">
+            <figure className="relative">
+              <img
+                src="/maps/lower48.svg"
+                alt="Nationwide coverage across the lower 48 United States"
+                className="w-full object-contain"
+              />
+              <span className="absolute top-[49%] left-[72%] h-3 w-3 rounded-full bg-[#337ec3] shadow-md animate-pulse" />
+              <span className="absolute top-[26%] left-[25%] h-3 w-3 rounded-full bg-[#337ec3] shadow-md animate-pulse [animation-delay:.4s]" />
+              <span className="absolute top-[39%] left-[47%] h-3 w-3 rounded-full bg-[#337ec3] shadow-md animate-pulse [animation-delay:.8s]" />
+              <span className="absolute top-[53%] left-[35%] h-3 w-3 rounded-full bg-[#337ec3] shadow-md animate-pulse [animation-delay:1.2s]" />
+              <figcaption className="absolute -right-8 bottom-16 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-slate-800 shadow ring-1 ring-white/60 flex items-center gap-2 transition transform hover:translate-y-[-1px] hover:shadow-md">
+                <ShieldCheck className="h-4 w-4 text-green-600" />
+                Trusted Across the U.S.
+              </figcaption>
+            </figure>
+            <p className="mt-4 text-sm font-medium text-slate-800">
+              Serving all of the lower 48 with reliability you can count on
+            </p>
+          </div>
+        </div>
       </section>
 
-      <WhyChooseUs />
+      {/* INTERIOR — quick service buckets in a Section (mirrors Home cards) */}
+      <Section
+        kicker="What we do"
+        title="Full-spectrum silo services"
+        subtitle="Choose a category to see details, process, and what to expect."
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              t: "Silo Cleaning",
+              d: "Bin whips, high-volume vacs, hang-up & mold removal.",
+              to: "/services/cleaning",
+              icon: Brush,
+            },
+            {
+              t: "Inspection",
+              d: "Structural, safety, water intrusion, and corrosion checks.",
+              to: "/services/inspection",
+              icon: Search,
+            },
+            {
+              t: "Sanitation",
+              d: "Infestation mitigation, swab testing & sanitation programs.",
+              to: "/services/sanitation",
+              icon: ShieldCheck,
+            },
+            {
+              t: "Maintenance",
+              d: "Preventative programs that minimize downtime.",
+              to: "/services/maintenance",
+              icon: Wrench,
+            },
+          ].map(({ t, d, to, icon: Icon }) => (
+            <NavLink
+              key={t}
+              to={to}
+              className="group rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                <Icon size={20} strokeWidth={2} />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">{t}</h3>
+              <p className="mt-1 text-sm text-slate-600">{d}</p>
+              <span className="mt-4 inline-flex text-sm font-semibold text-green-700">
+                Learn more →
+              </span>
+            </NavLink>
+          ))}
+        </div>
+      </Section>
 
-      <ServiceChips />
-
-      <QuoteCTA />
-      
-    </Page>
+      {/* Your reusable bottom blocks to stay consistent sitewide */}
+      <section className="pb-16 sm:pb-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
+          <WhyChooseUs className="mt-0"/>
+          <ServiceChips />
+          <QuoteCTA />
+        </div>
+      </section>
+    </main>
   );
 }

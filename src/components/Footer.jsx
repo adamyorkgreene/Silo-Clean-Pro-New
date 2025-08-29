@@ -7,7 +7,7 @@ export default function Footer() {
             <Container className="grid gap-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
                 <div>
                     <div className="mb-3 flex items-center gap-2">
-                        <div className="h-8 w-8 rounded-lg bg-green-600" />
+                        <img className="h-8 w-8" src="/greeneservices_small_logo.svg" alt='' />
                         <span className="text-lg font-bold">Silo Clean Pro</span>
                     </div>
                     <p className="text-sm text-slate-600">

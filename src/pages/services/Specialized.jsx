@@ -39,7 +39,7 @@ export default function Specialized() {
         </div>
 
         {/* image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg">
+        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
           <img
             src="/silo_img_4.jpg"
             alt="Technicians cleaning plastic and injection molding silos"

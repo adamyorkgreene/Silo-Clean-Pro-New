@@ -39,7 +39,7 @@ export default function Inspection() {
         </div>
 
         {/* image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg">
+        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
           <img
             src="/silo-inspection.jpg"
             alt="Technicians conducting professional silo inspections"

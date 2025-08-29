@@ -69,7 +69,7 @@ export default function Sanitation() {
         </div>
 
         {/* hero image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg">
+        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
           <img
             src="/silo-sanitation.jpg"
             alt="Technicians performing silo sanitation procedures"

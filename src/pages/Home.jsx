@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { ShieldCheck } from "lucide-react";
+import { Brush, Search, ShieldCheck, Wrench } from "lucide-react";
 import Section from "../components/Section.jsx";
 import Stat from "../components/Stat.jsx";
 import Pill from "../components/Pill.jsx";
@@ -170,16 +170,34 @@ export default function Home() {
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { t: "Silo Cleaning", d: "Bin whips, high-volume vacs, hang-up & mold removal." },
-            { t: "Inspection", d: "Structural, safety, water intrusion, and corrosion checks." },
-            { t: "Sanitation", d: "Advanced sanitation to reduce contamination and pests." },
-            { t: "Maintenance", d: "Preventative programs that minimize downtime." },
+            {
+              t: "Cleaning",
+              d: "Bin whips, high-volume vacs, hang-up & mold removal.",
+              icon: Brush
+            },
+            {
+              t: "Inspection",
+              d: "Structural, safety, water intrusion, and corrosion checks.",
+              icon: Search
+            },
+            {
+              t: "Sanitation",
+              d: "Advanced sanitation to reduce contamination and pests.",
+              icon: ShieldCheck
+            },
+            {
+              t: "Maintenance",
+              d: "Preventative programs that minimize downtime.",
+              icon: Wrench
+            }
           ].map((c) => (
             <div
               key={c.t}
               className="group rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className="h-10 w-10 rounded-lg bg-green-600/10" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                <c.icon size={20} strokeWidth={2} />
+              </div>
               <h3 className="mt-4 text-lg font-semibold text-slate-900">{c.t}</h3>
               <p className="mt-1 text-sm text-slate-600">{c.d}</p>
               <NavLink

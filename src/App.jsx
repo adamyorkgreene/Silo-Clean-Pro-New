@@ -6,6 +6,7 @@ import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import ServicesIndex from "./pages/Services.jsx";
+import ServicesNew from "./pages/ServicesNew.jsx";
 import Cleaning from "./pages/services/Cleaning.jsx";
 import Inspection from "./pages/services/Inspection.jsx";
 import Sanitation from "./pages/services/Sanitation.jsx";
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesIndex />} />
+          <Route path="/services-new" element={<ServicesNew />} />
           <Route path="/services/cleaning" element={<Cleaning />} />
           <Route path="/services/inspection" element={<Inspection />} />
           <Route path="/services/sanitation" element={<Sanitation />} />

@@ -37,7 +37,7 @@ export default function Cleaning() {
         </div>
 
         {/* image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg">
+        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
           <img
             src="/silo_img_2.jpg"
             alt="Technicians performing silo cleaning operations"

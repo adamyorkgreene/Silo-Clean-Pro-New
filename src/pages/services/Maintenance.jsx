@@ -13,6 +13,7 @@ export default function Maintenance() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             Why Silo Cleaning Is a Vital Part of Silo Maintenance
           </h2>
+
           <p className="mt-4 text-slate-600">
             For industries that store bulk materials—feed ingredients, grain, powders, plastics—silos
             are mission-critical. Regular maintenance keeps them safe, efficient, and compliant, and a
@@ -37,10 +38,35 @@ export default function Maintenance() {
               </span>
             ))}
           </div>
+
+          {/* Expanded "What This Means for You" */}
+          <div className="mt-8">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+              What This Means for You
+            </h3>
+            <ul className="mt-3 space-y-2 text-slate-700">
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                Reduced downtime by preventing costly flow blockages and unscheduled shutdowns
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                Extended equipment life through removal of corrosive or abrasive buildup
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                Compliance confidence with OSHA and local safety requirements via documented inspections
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                Optimized storage capacity by eliminating residue and reclaiming usable volume
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg">
+        {/* hero image */}
+        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
           <img
             src="/silo-maintenance.png"
             alt="Technicians performing routine silo maintenance and cleaning"
