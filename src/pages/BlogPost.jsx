@@ -28,14 +28,23 @@ export default function BlogPost() {
       setLoading(true);
       setError(null);
       try {
-        const path = post?.href || `/blog/${slug}.html`;
-        const res = await fetch(path);
+        const base = (import.meta && import.meta.env && import.meta.env.BASE_URL) ? import.meta.env.BASE_URL : "/";
+        const href = post?.href || `/blog/${slug}.html`;
+        const normalized = href.startsWith("/") ? href : `/${href}`;
+        const path = `${base.replace(/\/$/, "")}${normalized}`;
+        const res = await fetch(path, { headers: { "Accept": "text/html, */*;q=0.8" } });
         if (!res.ok) throw new Error(`Failed to load post (${res.status})`);
         const htmlText = await res.text();
         // Parse and extract body, then strip redundant elements (back link, H1, meta)
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlText, "text/html");
         const body = doc?.body;
+        // Detect SPA fallback (served index.html instead of the post)
+        const looksLikeAppShell = body && body.querySelector('#root');
+        if (looksLikeAppShell) {
+          throw new Error("Received app shell instead of post content (check server static file config)");
+        }
+        let originalHtml = body?.innerHTML?.trim() || htmlText;
         if (body) {
           // Remove any back-to-blog links
           body.querySelectorAll('a[href="/blog"], a[href$="/blog"]').forEach((el) => el.remove());
@@ -45,8 +54,13 @@ export default function BlogPost() {
           // Remove elements with class "meta" (author/date lines)
           body.querySelectorAll('.meta').forEach((el) => el.remove());
         }
-        const bodyHtml = body?.innerHTML?.trim() || htmlText;
-        if (active) setContent(bodyHtml);
+        let strippedHtml = body?.innerHTML?.trim() || htmlText;
+        // If stripping removed everything, fall back to original
+        const textLength = strippedHtml.replace(/<[^>]+>/g, "").trim().length;
+        if (textLength < 20) {
+          strippedHtml = originalHtml;
+        }
+        if (active) setContent(strippedHtml);
       } catch (e) {
         if (active) setError(e.message || "Error loading post");
       } finally {
