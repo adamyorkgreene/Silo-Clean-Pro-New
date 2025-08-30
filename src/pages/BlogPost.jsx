@@ -21,6 +21,8 @@ export default function BlogPost() {
   const [content, setContent] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  // Optional in-bundle fallback: posts placed in src/posts as HTML partials
+  const rawPosts = import.meta.glob("../posts/*.html", { as: "raw", eager: true });
 
   useEffect(() => {
     let active = true;
@@ -32,17 +34,38 @@ export default function BlogPost() {
         const href = post?.href || `/blog/${slug}.html`;
         const normalized = href.startsWith("/") ? href : `/${href}`;
         const path = `${base.replace(/\/$/, "")}${normalized}`;
-        const res = await fetch(path, { headers: { "Accept": "text/html, */*;q=0.8" } });
-        if (!res.ok) throw new Error(`Failed to load post (${res.status})`);
-        const htmlText = await res.text();
+        let htmlText = "";
+        let fetched = false;
+        try {
+          const res = await fetch(path, { headers: { "Accept": "text/html, */*;q=0.8" } });
+          if (!res.ok) throw new Error(`Failed to load post (${res.status})`);
+          htmlText = await res.text();
+          fetched = true;
+        } catch (e) {
+          // Fallback to bundled raw content if available
+          const key = `../posts/${slug}.html`;
+          if (rawPosts[key]) {
+            htmlText = rawPosts[key];
+          } else {
+            throw e;
+          }
+        }
         // Parse and extract body, then strip redundant elements (back link, H1, meta)
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlText, "text/html");
         const body = doc?.body;
         // Detect SPA fallback (served index.html instead of the post)
-        const looksLikeAppShell = body && body.querySelector('#root');
-        if (looksLikeAppShell) {
+        const looksLikeAppShell = fetched && body && body.querySelector('#root');
+        if (looksLikeAppShell && !rawPosts[`../posts/${slug}.html`]) {
           throw new Error("Received app shell instead of post content (check server static file config)");
+        } else if (looksLikeAppShell && rawPosts[`../posts/${slug}.html`]) {
+          // Use bundled fallback
+          const raw = rawPosts[`../posts/${slug}.html`];
+          const altDoc = parser.parseFromString(raw, "text/html");
+          const altBody = altDoc?.body;
+          const html = altBody?.innerHTML?.trim() || raw;
+          if (active) setContent(html);
+          return;
         }
         let originalHtml = body?.innerHTML?.trim() || htmlText;
         if (body) {
