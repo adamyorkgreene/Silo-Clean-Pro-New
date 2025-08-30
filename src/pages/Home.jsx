@@ -237,11 +237,14 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-slate-900">
                 <NavLink to={`/blog/${p.slug}`} className="hover:underline">{p.title}</NavLink>
               </h3>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-slate-600 [&>span.mx-2]:hidden [&>time]:before:content-['·'] [&>time]:before:mx-2">
                 <span className="font-medium text-slate-700">{p.author}</span>
                 <span className="mx-2">•</span>
                 <time dateTime={p.date}>{new Date(p.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" })}</time>
               </p>
+              <div className="mt-4">
+                <NavLink to={`/blog/${p.slug}`} className="text-sm font-semibold text-green-700 hover:underline">Read more</NavLink>
+              </div>
             </article>
           ))}
         </div>
