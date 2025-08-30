@@ -243,7 +243,7 @@ export default function Home() {
                 <time dateTime={p.date}>{new Date(p.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" })}</time>
               </p>
               <div className="mt-4">
-                <NavLink to={`/blog/${p.slug}`} className="text-sm font-semibold text-green-700 hover:underline">Read more</NavLink>
+                <NavLink to={`/blog/${p.slug}`} className="text-sm font-semibold text-green-700 hover:underline">Read post</NavLink>
               </div>
             </article>
           ))}
