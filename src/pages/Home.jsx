@@ -4,6 +4,7 @@ import { Brush, Search, ShieldCheck, Wrench } from "lucide-react";
 import Section from "../components/Section.jsx";
 import Stat from "../components/Stat.jsx";
 import Pill from "../components/Pill.jsx";
+import { getSortedPosts } from "../data/blogPosts.js";
 
 /** Background Stream iframe that auto-scales to cover.
  *  Desktop (>=1050px): anchor to TOP (crop bottom more).
@@ -93,6 +94,7 @@ function HeroBackgroundScaledIframe({
 
 export default function Home() {
   const navigate = useNavigate();
+  const latestPosts = getSortedPosts().slice(0, 4);
   return (
     <main className="bg-slate-50">
       {/* Hero */}
@@ -217,6 +219,39 @@ export default function Home() {
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
           <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+
+      {/* Blog preview */}
+      <Section
+        kicker="Blog"
+        title="Latest from our team"
+        subtitle="Recent safety tips, sanitation best practices, and field insights."
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {latestPosts.map((p) => (
+            <article
+              key={p.slug}
+              className="group rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <h3 className="text-lg font-semibold text-slate-900">
+                <NavLink to={`/blog/${p.slug}`} className="hover:underline">{p.title}</NavLink>
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                <span className="font-medium text-slate-700">{p.author}</span>
+                <span className="mx-2">•</span>
+                <time dateTime={p.date}>{new Date(p.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" })}</time>
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <NavLink
+            to="/blog"
+            className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+          >
+            See more posts
+          </NavLink>
         </div>
       </Section>
     </main>

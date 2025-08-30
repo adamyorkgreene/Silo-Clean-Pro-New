@@ -14,6 +14,8 @@ import Maintenance from "./pages/services/Maintenance.jsx";
 import Specialized from "./pages/services/Specialized.jsx";
 import Contact from "./pages/Contact.jsx";
 import Quote from "./pages/Quote.jsx";
+import Blog from "./pages/Blog.jsx";
+import BlogPost from "./pages/BlogPost.jsx";
 
 export default function App() {
   return (
@@ -33,6 +35,8 @@ export default function App() {
           <Route path="/services/specialized" element={<Specialized />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<Quote />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
         <Footer />
       </div>
