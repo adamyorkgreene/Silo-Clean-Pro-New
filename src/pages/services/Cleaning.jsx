@@ -107,7 +107,7 @@ export default function Cleaning() {
               href="/contact"
               className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
             >
-              Ask about rentals/training
+              Talk to a cleaning specialist
             </a>
           </div>
         </div>

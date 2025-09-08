@@ -91,7 +91,7 @@ export default function Specialized() {
               href="/contact"
               className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
             >
-              Ask about rentals/training
+              Discuss specialized solutions
             </a>
           </div>
         </div>

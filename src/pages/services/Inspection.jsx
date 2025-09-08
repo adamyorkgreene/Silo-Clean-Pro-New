@@ -124,7 +124,7 @@ export default function Inspection() {
               href="/contact"
               className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
             >
-              Ask about rentals/training
+              Schedule an inspection
             </a>
           </div>
         </div>
