@@ -77,15 +77,15 @@ export default function Inspection() {
       </Section>
 
       {/* Guidance / education band + secondary image */}
-      <Container>
-        <section className="mt-4 grid items-start gap-8 md:grid-cols-2">
+      <Section
+        kicker="Guidance"
+        title="Silo inspections, simplified"
+        subtitle="Recommended about every ~3 years for concrete silos (interval varies by use, age, and conditions)."
+        className="pt-0"
+      >
+        <div className="grid items-start gap-8 md:grid-cols-2">
           <div className="rounded-2xl border bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">Silo Inspections</h3>
-            <p className="mt-2 text-slate-700">
-              Recommended about every <span className="font-semibold">3 years</span> for concrete silos (varies by use & age).
-            </p>
-
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               {[
                 { Icon: ClipboardCheck, t: "Clear report with photos" },
                 { Icon: Droplets, t: "Water intrusion detection" },
@@ -102,7 +102,6 @@ export default function Inspection() {
                 </div>
               ))}
             </div>
-
             <div className="mt-5 flex gap-3">
               <a
                 href="/quote"
@@ -126,8 +125,8 @@ export default function Inspection() {
               loading="lazy"
             />
           </div>
-        </section>
-      </Container>
+        </div>
+      </Section>
       
       {/* Proof / badges */}
       <Section kicker="Why us" title="Safety, speed, and reliability">
