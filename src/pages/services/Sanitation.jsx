@@ -126,6 +126,30 @@ export default function Sanitation() {
           ))}
         </ul>
       </Section>
+      
+      {/* CTA band */}
+      <Section className="pt-0">
+        <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
+          <div>
+            <h3 className="text-lg font-semibold text-slate-900">Ready to talk through your application?</h3>
+            <p className="text-slate-600">Request service or ask about rentals and training.</p>
+          </div>
+          <div className="flex gap-3">
+            <a
+              href="/quote"
+              className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+            >
+              Request service
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+            >
+              Ask about rentals/training
+            </a>
+          </div>
+        </div>
+      </Section>
     </main>
   );
 }
