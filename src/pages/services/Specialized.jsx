@@ -1,4 +1,4 @@
-import { ShieldCheck, Package, Wrench, Sparkles, ChevronDown } from "lucide-react";
+import { ShieldCheck, Package, Wrench, Sparkles, ChevronDown, Check, HardHat, Clock } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -54,24 +54,87 @@ export default function Specialized() {
         </Container>
       </section>
 
-      {/* Services list */}
+      {/* Services list (grouped, readable) */}
       <Section
         kicker="What we do"
         title="Our Specialized Cleaning Services"
-        subtitle="Tailored solutions for plastics and injection molding facilities, including resin changeovers and sanitization protocols."
+        subtitle="Tailored solutions for plastics and injection molding facilities, including resin changeovers and sanitization."
       >
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Plastic & Resin</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Plastic & injection molding silo cleaning",
+                "Resin change-over silo cleaning",
+                "Cross-contamination reduction",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Methods & Prep</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Surface preparation for equipment & silos",
+                "Sanitizing applications to prevent contamination",
+                "Non-abrasive options for sensitive components",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Scheduling & Safety</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "OSHA + confined-space safe",
+                "Night/weekend scheduling",
+                "Coordination around production windows",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Highlights band */}
+      <Section
+        kicker="At a Glance"
+        title="Specialized Cleaning Highlights"
+        subtitle="OSHA-approved entry, plastic/resin expertise, coordinated changeovers."
+        className="pt-0"
+      >
+        <div className="grid gap-3 sm:grid-cols-2">
           {[
-            "Plastic & Injection Molding Silo Cleaning",
-            "Resin change-over silo cleaning",
-            "Surface preparation for equipment & silos",
-            "Sanitizing applications to prevent contamination",
-          ].map((i) => (
-            <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
-              {i}
-            </li>
+            { Icon: ShieldCheck, t: "OSHA + confined-space" },
+            { Icon: Package, t: "Plastic & resin expertise" },
+            { Icon: Wrench, t: "Surface prep options" },
+            { Icon: Sparkles, t: "Sanitizing applications" },
+            { Icon: Clock, t: "Fast turnarounds" },
+            { Icon: HardHat, t: "Night/weekend scheduling" },
+          ].map(({ Icon, t }) => (
+            <div key={t} className="flex items-center gap-3 rounded-xl border bg-slate-50 p-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                <Icon className="h-5 w-5" />
+              </div>
+              <span className="text-sm font-semibold text-slate-800">{t}</span>
+            </div>
           ))}
-        </ul>
+        </div>
       </Section>
       
       {/* Proof / badges */}
@@ -129,7 +192,7 @@ export default function Specialized() {
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
             <h3 className="text-lg font-semibold text-slate-900">Ready to talk through your application?</h3>
-            <p className="text-slate-600">Request service or ask about rentals and training.</p>
+            <p className="text-slate-600">Request service or discuss specialized solutions.</p>
           </div>
           <div className="flex gap-3">
             <a

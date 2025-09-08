@@ -1,4 +1,4 @@
-import { ShieldCheck, Wrench, ClipboardCheck, Clock, ChevronDown } from "lucide-react";
+import { ShieldCheck, Wrench, ClipboardCheck, Clock, ChevronDown, Check, HardHat } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -24,7 +24,7 @@ export default function Maintenance() {
                 {[
                   { Icon: ShieldCheck, text: "OSHA-Approved" },
                   { Icon: Wrench, text: "Preventative Maintenance" },
-                  { Icon: ClipboardCheck, text: "Inspection & Docs" },
+                  { Icon: ClipboardCheck, text: "Inspection & Safety" },
                   { Icon: Clock, text: "24/7 Nationwide" },
                 ].map(({ Icon, text }) => (
                   <span key={text} className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm text-white shadow-sm">
@@ -54,42 +54,96 @@ export default function Maintenance() {
         </Container>
       </section>
 
-      {/* Services list */}
+      {/* Services list (grouped, readable) */}
       <Section
         kicker="What we do"
-        title="Our Silo Cleaning Services"
-        subtitle="After inspection, we deploy high-volume vacuums, bin whips, blasting, and sanitation technologies to restore safety and flow."
+        title="Our Maintenance & Cleaning Services"
+        subtitle="After inspection, we deploy the right tools and schedule to keep assets safe and flowing."
       >
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Methods & Tools</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "High-volume vacuums & bin whips",
+                "Vacuum truck services",
+                "Outside cleaning, media blasting & painting",
+                "Hydro blasting & dry ice blasting",
+                "Soda blasting",
+                "Baghouse cleaning / filter replacement",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Common Issues</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Hang-up removal",
+                "Mold / bad grain removal",
+                "Silo cone / rotten corn removal",
+                "Silo cleaning for infestation",
+                "Silo sanitization",
+                "Bulk liquid tank cleaning + corrosion removal",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Materials & Systems</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Injection molding resin change-over silo cleaning",
+                "Grain / Flour / Cement ingredient silos",
+                "Soda ash / fly ash silos",
+                "Galvanized corrugated silos",
+                "KB systems silo cleaning",
+                "Cleaning of any materials in a silo",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Highlights band */}
+      <Section
+        kicker="At a Glance"
+        title="Maintenance Highlights"
+        subtitle="Preventative programs, OSHA-approved entry, 24/7 nationwide response."
+        className="pt-0"
+      >
+        <div className="grid gap-3 sm:grid-cols-2">
           {[
-            "Hang-up removal",
-            "Mold removal",
-            "Bad grain removal",
-            "Vacuum truck services",
-            "Outside cleaning, media blasting & painting",
-            "Hydro blasting & dry ice blasting",
-            "Soda blasting",
-            "Dry cleaning of silos",
-            "Injection molding resin change over silo cleaning",
-            "Grain silo cleaning",
-            "Cement ingredient silo cleaning",
-            "Flour silo cleaning",
-            "Soda ash / fly ash silo cleaning",
-            "Cleaning of any materials in a silo",
-            "Silo cone / rotten corn removal",
-            "KB systems silo cleaning",
-            "Bulk liquid tank cleaning + corrosion removal",
-            "Swab testing (if needed)",
-            "Silo cleaning for infestation",
-            "Silo sanitization",
-            "Galvanized corrugated silo cleaning",
-            "Baghouse cleaning / filter replacement",
-          ].map((i) => (
-            <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
-              {i}
-            </li>
+            { Icon: ShieldCheck, t: "OSHA + confined-space" },
+            { Icon: Wrench, t: "Preventative program scheduling" },
+            { Icon: ClipboardCheck, t: "Inspection & safety checks" },
+            { Icon: Clock, t: "24/7 nationwide response" },
+            { Icon: HardHat, t: "Night/weekend windows" },
+            { Icon: ShieldCheck, t: "Focus on uptime & safety" },
+          ].map(({ Icon, t }) => (
+            <div key={t} className="flex items-center gap-3 rounded-xl border bg-slate-50 p-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                <Icon className="h-5 w-5" />
+              </div>
+              <span className="text-sm font-semibold text-slate-800">{t}</span>
+            </div>
           ))}
-        </ul>
+        </div>
       </Section>
       
       {/* Proof / badges */}
@@ -112,7 +166,7 @@ export default function Maintenance() {
           {[
             {
               q: "What’s included in a maintenance program?",
-              a: "Scheduled inspections, cleaning, documentation, and coordination with your team to address issues before they become outages.",
+              a: "Scheduled inspections, cleaning, and coordination with your team to address issues before they become outages.",
             },
             {
               q: "Can maintenance occur during production?",
@@ -147,7 +201,7 @@ export default function Maintenance() {
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
             <h3 className="text-lg font-semibold text-slate-900">Ready to talk through your application?</h3>
-            <p className="text-slate-600">Request service or ask about rentals and training.</p>
+            <p className="text-slate-600">Request service or discuss a maintenance program.</p>
           </div>
           <div className="flex gap-3">
             <a
