@@ -124,9 +124,9 @@ export default function Cleaning() {
 
       {/* Guidance / education band + secondary image */}
       <Section
-        kicker="Guidance"
-        title="Silo cleaning, simplified"
-        subtitle="What to expect and how to prepare for service."
+        kicker="At a Glance"
+        title="Cleaning Highlights"
+        subtitle="Confined-space safe crews, high‑volume vacs/bin whips, optional blasting and sanitation."
         className="pt-0"
       >
         <div className="grid items-start gap-8 md:grid-cols-2">
@@ -136,7 +136,7 @@ export default function Cleaning() {
                 { Icon: ShieldCheck, t: "OSHA + confined-space" },
                 { Icon: Wind, t: "High-volume vacs & bin whips" },
                 { Icon: SprayCan, t: "Dry ice / hydro options" },
-                { Icon: ClipboardCheck, t: "Clear before/after notes" },
+                { Icon: ClipboardCheck, t: "Pre-entry safety briefing" },
                 { Icon: Clock, t: "Fast turnarounds" },
                 { Icon: HardHat, t: "Night/weekend scheduling" },
               ].map(({ Icon, t }) => (
@@ -157,7 +157,7 @@ export default function Cleaning() {
                   "Confined-space prep & air monitoring",
                   "Material removal with vacs/bin whips",
                   "Targeted blasting or sanitation (if needed)",
-                  "Final sweep + documentation",
+                  "Final sweep + verification",
                 ].map((step) => (
                   <li key={step} className="flex gap-2">
                     <Check className="mt-0.5 h-4 w-4 text-green-600" />

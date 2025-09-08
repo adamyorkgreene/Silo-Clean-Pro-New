@@ -18,12 +18,12 @@ export default function Inspection() {
               <p className="text-xs font-semibold uppercase tracking-wider text-green-400">Services</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Silo Inspection</h1>
               <p className="mt-3 max-w-2xl text-slate-200">
-                Along with silo cleaning, we provide professional silo inspection services for a variety of industries. Inspection is vital for continued safety, and our OSHA-approved team provides clear documentation and maintenance recommendations.
+                Along with silo cleaning, we provide professional silo inspection services for a variety of industries. Inspections help catch issues early and keep operations safe and compliant.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 {[
                   { Icon: ShieldCheck, text: "OSHA-Approved" },
-                  { Icon: ClipboardCheck, text: "Documentation" },
+                  { Icon: ClipboardCheck, text: "Structural Checks" },
                   { Icon: Droplets, text: "Water Intrusion ID" },
                   { Icon: HardHat, text: "Confined-Space Certified" },
                 ].map(({ Icon, text }) => (
@@ -67,7 +67,7 @@ export default function Inspection() {
             "Corrosion / paint integrity inspection",
             "Top of silo safety inspection",
             "Ladder well safety inspection",
-            "Documentation with maintenance recommendations",
+            "Access and safety feature review",
           ].map((i) => (
             <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
               {i}
@@ -78,21 +78,21 @@ export default function Inspection() {
 
       {/* Guidance / education band + secondary image */}
       <Section
-        kicker="Guidance"
-        title="Silo inspections, simplified"
-        subtitle="Recommended about every ~3 years for concrete silos (interval varies by use, age, and conditions)."
+        kicker="At a Glance"
+        title="Inspection Highlights"
+        subtitle="OSHA-approved entry, water intrusion checks, typical duration ~0.5-1 day per silo."
         className="pt-0"
       >
         <div className="grid items-start gap-8 md:grid-cols-2">
           <div className="rounded-2xl border bg-white p-6 shadow-sm">
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                { Icon: ClipboardCheck, t: "Clear report with photos" },
+                { Icon: ClipboardCheck, t: "Structural & safety checks" },
                 { Icon: Droplets, t: "Water intrusion detection" },
                 { Icon: ShieldCheck, t: "OSHA + confined-space" },
                 { Icon: HardHat, t: "Entry when required" },
-                { Icon: Clock, t: "~½–1 day per silo" },
-                { Icon: ClipboardCheck, t: "Actionable maintenance plan" },
+                { Icon: Clock, t: "~0.5-1 day per silo" },
+                { Icon: ClipboardCheck, t: "Corrosion/paint assessment" },
               ].map(({ Icon, t }) => (
                 <div key={t} className="flex items-center gap-3 rounded-xl border bg-slate-50 p-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
@@ -183,7 +183,7 @@ export default function Inspection() {
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
             <h3 className="text-lg font-semibold text-slate-900">Ready to talk through your application?</h3>
-            <p className="text-slate-600">Request service or ask about rentals and training.</p>
+            <p className="text-slate-600">Request service or schedule an inspection.</p>
           </div>
           <div className="flex gap-3">
             <a
