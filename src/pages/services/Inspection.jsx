@@ -1,4 +1,4 @@
-import { ShieldCheck, ClipboardCheck, Droplets, HardHat, ChevronDown } from "lucide-react";
+import { ShieldCheck, ClipboardCheck, Droplets, HardHat, ChevronDown, Clock } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -81,18 +81,40 @@ export default function Inspection() {
         <section className="mt-4 grid items-start gap-8 md:grid-cols-2">
           <div className="rounded-2xl border bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-slate-900">Silo Inspections</h3>
-            <p className="mt-2 text-slate-600">
-              Getting a silo inspection can feel overwhelming—especially if it’s been years. As a general guideline, we recommend concrete storage silos be inspected every three years. Actual frequency depends on usage, materials, age, and site conditions. If you’re unsure how often to inspect, our team can advise the right interval for your operation.
+            <p className="mt-2 text-slate-700">
+              Recommended about every <span className="font-semibold">3 years</span> for concrete silos (varies by use & age).
             </p>
-            <p className="mt-2 text-slate-600">
-              All team members are highly-trained and confined-space certified. We’ll work with you to select the appropriate inspection scope—and when needed, our technicians will physically enter and inspect your silo.
-            </p>
-            <div className="mt-4">
+
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                { Icon: ClipboardCheck, t: "Clear report with photos" },
+                { Icon: Droplets, t: "Water intrusion detection" },
+                { Icon: ShieldCheck, t: "OSHA + confined-space" },
+                { Icon: HardHat, t: "Entry when required" },
+                { Icon: Clock, t: "~½–1 day per silo" },
+                { Icon: ClipboardCheck, t: "Actionable maintenance plan" },
+              ].map(({ Icon, t }) => (
+                <div key={t} className="flex items-center gap-3 rounded-xl border bg-slate-50 p-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800">{t}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 flex gap-3">
+              <a
+                href="/quote"
+                className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+              >
+                Schedule inspection
+              </a>
               <a
                 href="tel:8886236050"
-                className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
               >
-                Contact Us to Learn More
+                Call 888-623-6050
               </a>
             </div>
           </div>
