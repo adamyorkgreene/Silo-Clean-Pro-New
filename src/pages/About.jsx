@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ShieldCheck, Clock, HardHat, MapPin } from "lucide-react";
-import Page from "./Page.jsx";
+import Section from "../components/Section.jsx";
+import Container from "../components/Container.jsx";
 import QuoteCTA from "../components/QuoteCTA.jsx";
 import ServiceChips from "../components/ServiceChips.jsx";
 
@@ -82,7 +83,7 @@ function HeroBackgroundScaledIframe({
 export default function About() {
   return (
     <main className="bg-slate-50">
-      {/* FULL-BLEED HERO — identical structure to Home */}
+      {/* FULL-BLEED HERO – identical structure to Home */}
       <section className="relative isolate overflow-hidden">
         <HeroBackgroundScaledIframe
           src="https://customer-7l16vj4uw6jxacav.cloudflarestream.com/89a07de3c231bb8948a29e76369aac3c/iframe?muted=true&preload=true&loop=true&autoplay=true&controls=false"
@@ -155,25 +156,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* INTERIOR SECTIONS — keep your existing About content inside a padded Page */}
-      <Page title={null} noChildMargin={true}>
-        {/* Side-by-side image + copy */}
-        <section className="grid items-center gap-10 md:grid-cols-2">
+      {/* INTERIOR SECTIONS – converted to Section containers */}
+      <Section
+        kicker="About"
+        title="Experience You Can Trust"
+        subtitle="OSHA-approved entry, confined-space crews, and modern equipment to get your system safe, compliant, and back online quickly."
+        className="pt-0"
+      >
+        <div className="grid items-center gap-10 md:grid-cols-2">
           {/* Copy column */}
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-              Experience You Can Trust
-            </h2>
-
-            <p className="mt-4 text-slate-600">
-              Our confined-space teams handle the toughest silo conditions—from heavy hang-ups
-              and bad grain to mold remediation and corrosion. We pair OSHA-approved
-              entry procedures with modern equipment to get your system safe, compliant,
-              and back online quickly.
-            </p>
-
-            {/* Quick capability bullets (concise, not fluff) */}
-            <ul className="mt-4 space-y-2 text-slate-700 text-sm">
+            <ul className="mt-2 space-y-2 text-slate-700 text-sm">
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
                 Confined-space certified technicians (licensed & insured)
@@ -188,7 +181,7 @@ export default function About() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
-                Documentation with recommendations after every job
+                Final sweep & verification at completion
               </li>
             </ul>
 
@@ -218,84 +211,83 @@ export default function About() {
               loading="lazy"
             />
           </div>
-        </section>
+        </div>
+      </Section>
 
-        {/* Services overview */}
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Core Silo Cleaning & Inspection Services
-          </h2>
-          <p className="mt-2 text-slate-600">
-            From dry cleaning and media blasting to infestations, sanitation, and cone/rotten grain
-            removal—our crews handle every stage of silo health and safety.
-          </p>
+      <Section
+        kicker="Services"
+        title="Core Silo Cleaning & Inspection Services"
+        subtitle="From dry cleaning and blasting to infestation response and sanitation, we handle every stage of silo health and safety."
+      >
+        <div className="mt-2 grid gap-6 md:grid-cols-2">
+          <ul className="space-y-3 rounded-2xl border bg-white p-6 shadow-sm">
+            {[
+              "Nationwide service",
+              "Emergency response available throughout the USA",
+              "Davit arm entry with OSHA-approved process",
+              "Confined space trained and certified",
+              "Hang-up + mold removal",
+              "Vacuum truck services",
+              "Outside of silo cleaning",
+              "Hydro, Soda, and Dry Ice blasting",
+              "Dry cleaning of silos",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-green-600" />
+                <span className="text-slate-700">{item}</span>
+              </li>
+            ))}
+          </ul>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <ul className="space-y-3 rounded-2xl border bg-white p-6 shadow-sm">
-              {[
-                "Nationwide service",
-                "Emergency response available throughout the USA",
-                "Davit arm entry with OSHA-approved process",
-                "Confined space trained and certified",
-                "Hang-up + mold removal",
-                "Vacuum truck services",
-                "Outside of silo cleaning",
-                "Hydro, Soda, and Dry Ice blasting",
-                "Dry cleaning of silos",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-green-600" />
-                  <span className="text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
+          <ul className="space-y-3 rounded-2xl border bg-white p-6 shadow-sm">
+            {[
+              "Injection molding resin change-over silo cleaning",
+              "Cement ingredient, Grain, Flour silo cleaning",
+              "Bad grain removal",
+              "Soda ash / fly ash silo cleaning",
+              "Cleaning of any materials in a silo",
+              "Silo cone / rotten corn removal",
+              "KB systems silo cleaning",
+              "Bulk liquid tank cleaning + corrosion removal",
+              "Silo cleaning for infestation & silo sanitization",
+              "Galvanized corrugated silo cleaning",
+              "Baghouse cleaning / filter replacement",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-green-600" />
+                <span className="text-slate-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
 
-            <ul className="space-y-3 rounded-2xl border bg-white p-6 shadow-sm">
-              {[
-                "Injection molding resin change-over silo cleaning",
-                "Cement ingredient, Grain, Flour silo cleaning",
-                "Bad grain removal",
-                "Soda ash / fly ash silo cleaning",
-                "Cleaning of any materials in a silo",
-                "Silo cone / rotten corn removal",
-                "KB systems silo cleaning",
-                "Bulk liquid tank cleaning + corrosion removal",
-                "Silo cleaning for infestation & silo sanitization",
-                "Galvanized corrugated silo cleaning",
-                "Baghouse cleaning / filter replacement",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-green-600" />
-                  <span className="text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Safety registration callout */}
-        <section className="mt-12">
-          <div className="rounded-2xl border bg-white p-6 shadow-sm">
-            <div className="flex items-start gap-4">
-              <HardHat className="mt-1 h-6 w-6 text-green-600" />
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900">Safety First</h3>
-                <p className="mt-1 text-slate-600">
-                  Proudly registered with <span className="font-semibold">Browz</span> as a company
-                  offering exceptional safety services.
-                </p>
-              </div>
+      <Section
+        kicker="Safety"
+        title="Safety First"
+        subtitle="Proudly registered with Browz as a company offering exceptional safety services."
+        className="pt-0"
+      >
+        <div className="rounded-2xl border bg-white p-6 shadow-sm">
+          <div className="flex items-start gap-4">
+            <HardHat className="mt-1 h-6 w-6 text-green-600" />
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900">Our Commitment</h3>
+              <p className="mt-1 text-slate-600">
+                Safety underpins every job—from planning to execution and closeout.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </Section>
 
-        {/* Additional services */}
+      <Section className="pt-0">
         <ServiceChips />
+      </Section>
 
-        {/* CTA band */}
+      <Section className="pt-0">
         <QuoteCTA />
-
-      </Page>
+      </Section>
     </main>
   );
 }
