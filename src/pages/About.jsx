@@ -20,10 +20,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Section from "../components/Section.jsx";
-import Section from "../components/Section.jsx";
-import Container from "../components/Container.jsx";
-import QuoteCTA from "../components/QuoteCTA.jsx";
-import ServiceChips from "../components/ServiceChips.jsx";
 
 /** EXACT same scaler as Home */
 function HeroBackgroundScaledIframe({
