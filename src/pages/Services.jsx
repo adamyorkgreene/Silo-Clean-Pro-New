@@ -163,66 +163,6 @@ export default function ServicesIndex() {
           </div>
         </div>
       </section>
-
-      {/* INTERIOR — quick service buckets in a Section (mirrors Home cards) */}
-      <Section
-        kicker="What we do"
-        title="Full-spectrum silo services"
-        subtitle="Choose a category to see details, process, and what to expect."
-      >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              t: "Silo Cleaning",
-              d: "Bin whips, high-volume vacs, hang-up & mold removal.",
-              to: "/services/cleaning",
-              icon: Brush,
-            },
-            {
-              t: "Inspection",
-              d: "Structural, safety, water intrusion, and corrosion checks.",
-              to: "/services/inspection",
-              icon: Search,
-            },
-            {
-              t: "Sanitation",
-              d: "Infestation mitigation, swab testing & sanitation programs.",
-              to: "/services/sanitation",
-              icon: ShieldCheck,
-            },
-            {
-              t: "Maintenance",
-              d: "Preventative programs that minimize downtime.",
-              to: "/services/maintenance",
-              icon: Wrench,
-            },
-          ].map(({ t, d, to, icon: Icon }) => (
-            <NavLink
-              key={t}
-              to={to}
-              className="group rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
-                <Icon size={20} strokeWidth={2} />
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-slate-900">{t}</h3>
-              <p className="mt-1 text-sm text-slate-600">{d}</p>
-              <span className="mt-4 inline-flex text-sm font-semibold text-green-700">
-                Learn more →
-              </span>
-            </NavLink>
-          ))}
-        </div>
-      </Section>
-
-      {/* Your reusable bottom blocks to stay consistent sitewide */}
-      <section className="pb-16 sm:pb-20">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
-          <WhyChooseUs className="mt-0"/>
-          <ServiceChips />
-          <QuoteCTA />
-        </div>
-      </section>
     </main>
   );
 }

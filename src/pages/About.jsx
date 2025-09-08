@@ -1,5 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { ShieldCheck, Clock, HardHat, MapPin } from "lucide-react";
+import {
+  ShieldCheck,
+  Clock,
+  HardHat,
+  MapPin,
+  Newspaper,
+  Layers,
+  Utensils,
+  Plane,
+  Plug,
+  Flame,
+  Factory,
+  Package,
+  Paintbrush,
+  Eraser,
+  SprayCan,
+  Wrench,
+  Landmark,
+  ChevronDown,
+} from "lucide-react";
+import Section from "../components/Section.jsx";
 import Section from "../components/Section.jsx";
 import Container from "../components/Container.jsx";
 import QuoteCTA from "../components/QuoteCTA.jsx";
@@ -97,12 +117,10 @@ export default function About() {
           {/* Left: text + trust === same pattern */}
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-              About Greene Services, Inc.
+              About Silo Clean Pro
             </h1>
             <p className="mt-4 text-lg text-slate-800">
-              GreeneServices provides nationwide silo cleaning and inspection with OSHA-approved,
-              licensed & insured technicians. Our confined-space teams handle emergency response,
-              heavy hang-ups, sanitation, and full-scale maintenance programs across the lower 48.
+              Silo Clean Pro provides nationwide silo cleaning and inspection with OSHA-approved, licensed & insured technicians. We are a division of Greene Services, Inc., delivering emergency response, heavy hang-ups, sanitation, and maintenance programs across the lower 48.
             </p>
 
             <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -156,137 +174,98 @@ export default function About() {
         </div>
       </section>
 
-      {/* INTERIOR SECTIONS – converted to Section containers */}
+      {/* What we do (brief) */}
       <Section
-        kicker="About"
-        title="Experience You Can Trust"
-        subtitle="OSHA-approved entry, confined-space crews, and modern equipment to get your system safe, compliant, and back online quickly."
-        className="pt-0"
+        kicker="What we do"
+        title="Restore flow. Recover capacity. Reduce risk."
+        subtitle="Non-entry methods first; full PRCS entry only when required. Fast mobilization and liner‑safe tooling across the lower 48."
       >
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          {/* Copy column */}
-          <div>
-            <ul className="mt-2 space-y-2 text-slate-700 text-sm">
-              <li className="flex items-start gap-2">
+        <div className="grid items-start gap-8 md:grid-cols-2">
+          <ul className="space-y-2 text-sm text-slate-700">
+            {[
+              "Blockage and build‑up removal (bridging, rat‑holing, doming)",
+              "Silo/bin/hopper cleanouts for food, cement, chemicals, plastics",
+              "Vacuum recovery and material handling",
+              "Preventive maintenance programs",
+              "Emergency flow‑loss response (24/7 windows)",
+            ].map((t) => (
+              <li key={t} className="flex gap-2">
                 <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
-                Confined-space certified technicians (licensed & insured)
+                <span>{t}</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
-                Bin whips & high-volume vacuum systems for deep cleaning
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
-                Hydro, soda, and dry-ice blasting for stubborn buildup
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
-                Final sweep & verification at completion
-              </li>
-            </ul>
-
-            {/* Compact stats row */}
-            <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div className="text-xl font-bold text-green-700">24/7</div>
-                <p className="text-[11px] text-slate-600">Emergency</p>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-green-700">&gt;10 yrs</div>
-                <p className="text-[11px] text-slate-600">Nationwide</p>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-green-700">Lower 48</div>
-                <p className="text-[11px] text-slate-600">Coverage</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Image column */}
-          <div className="overflow-hidden rounded-2xl shadow-lg w-[70%] mx-auto">
+            ))}
+          </ul>
+          <figure className="overflow-hidden rounded-2xl shadow-sm border">
             <img
               src="/silo_img_1.png"
-              alt="GreeneServices silo cleaning team at work"
+              alt="Silo Clean Pro crew at work"
               className="w-full object-cover"
               loading="lazy"
             />
-          </div>
+          </figure>
         </div>
       </Section>
 
+      {/* Applicable Industries icons */}
       <Section
-        kicker="Services"
-        title="Core Silo Cleaning & Inspection Services"
-        subtitle="From dry cleaning and blasting to infestation response and sanitation, we handle every stage of silo health and safety."
+        kicker="Industries"
+        title="Applicable industries"
+        subtitle="Versatile across food & beverage, plastics, cement, transportation, power, remediation, foundry, and packaging."
       >
-        <div className="mt-2 grid gap-6 md:grid-cols-2">
-          <ul className="space-y-3 rounded-2xl border bg-white p-6 shadow-sm">
-            {[
-              "Nationwide service",
-              "Emergency response available throughout the USA",
-              "Davit arm entry with OSHA-approved process",
-              "Confined space trained and certified",
-              "Hang-up + mold removal",
-              "Vacuum truck services",
-              "Outside of silo cleaning",
-              "Hydro, Soda, and Dry Ice blasting",
-              "Dry cleaning of silos",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-green-600" />
-                <span className="text-slate-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <ul className="space-y-3 rounded-2xl border bg-white p-6 shadow-sm">
-            {[
-              "Injection molding resin change-over silo cleaning",
-              "Cement ingredient, Grain, Flour silo cleaning",
-              "Bad grain removal",
-              "Soda ash / fly ash silo cleaning",
-              "Cleaning of any materials in a silo",
-              "Silo cone / rotten corn removal",
-              "KB systems silo cleaning",
-              "Bulk liquid tank cleaning + corrosion removal",
-              "Silo cleaning for infestation & silo sanitization",
-              "Galvanized corrugated silo cleaning",
-              "Baghouse cleaning / filter replacement",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-green-600" />
-                <span className="text-slate-700">{item}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mx-auto">
+          {[
+            { Icon: Newspaper, label: "Printing" },
+            { Icon: Layers, label: "Textiles" },
+            { Icon: Utensils, label: "Food & Beverage" },
+            { Icon: Plane, label: "Transportation" },
+            { Icon: Plug, label: "Power" },
+            { Icon: Flame, label: "Remediation" },
+            { Icon: Factory, label: "Foundry" },
+            { Icon: Package, label: "Packaging" },
+          ].map(({ Icon, label }) => (
+            <div key={label} className="flex flex-col items-center justify-center p-2">
+              <Icon className="h-12 w-12 sm:h-14 sm:w-14 text-slate-800" />
+              <span className="mt-2 text-sm font-medium text-slate-800 text-center">{label}</span>
+            </div>
+          ))}
         </div>
       </Section>
 
+      {/* Industrial Applications accordion */}
       <Section
-        kicker="Safety"
-        title="Safety First"
-        subtitle="Proudly registered with Browz as a company offering exceptional safety services."
+        kicker="Industrial Applications"
+        title="Where dry ice blasting fits"
+        subtitle="Open each to see comparisons and benefits."
         className="pt-0"
       >
-        <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <div className="flex items-start gap-4">
-            <HardHat className="mt-1 h-6 w-6 text-green-600" />
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">Our Commitment</h3>
-              <p className="mt-1 text-slate-600">
-                Safety underpins every job—from planning to execution and closeout.
-              </p>
-            </div>
-          </div>
+        <div className="mr-auto space-y-3">
+          {[
+            { icon: Paintbrush, title: "Rust removal", comparison: "Unlike sandblasting, there’s minimal cleanup.", benefits: "Non‑abrasive • No secondary waste", desc: "Freeze‑lift action releases corrosion without harming base material." },
+            { icon: Eraser, title: "Adhesive & paint removal", comparison: "More precise than scraping or chemicals.", benefits: "No harsh chemicals • Minimal residue", desc: "Breaks the bond between coatings and substrate for clean release." },
+            { icon: Flame, title: "Fire remediation", comparison: "Faster and cleaner than sanding/chemicals.", benefits: "No secondary waste • Odor reduction", desc: "Removes soot and smoke staining while preserving surfaces." },
+            { icon: SprayCan, title: "Mold cleaning & remediation", comparison: "More thorough than scrubbing/chemicals.", benefits: "Chemical‑free • Helps reduce regrowth", desc: "Cold temperature assists spore deactivation while removing contamination." },
+            { icon: Wrench, title: "Equipment & machinery", comparison: "Less teardown; faster turnarounds.", benefits: "No water/abrasives • Safe for electrical", desc: "Removes grease and process buildup without full disassembly in many cases." },
+            { icon: Landmark, title: "Historical restoration", comparison: "Gentler than pressure washing/chemicals.", benefits: "Non‑abrasive • Chemical‑free", desc: "Cleans grime and pollutants while preserving detail." },
+          ].map(({ icon: Icon, title, comparison, benefits, desc }) => (
+            <details
+              key={title}
+              className="group p-4 rounded-xl border-[3px] bg-white shadow-sm transition open:bg-slate-50 hover:-translate-y-0.5 hover:shadow-md hover:border-slate-300 focus-within:ring-2 focus-within:ring-green-600"
+            >
+              <summary className="flex items-center justify-between gap-3 cursor-pointer select-none outline-none rounded-lg -mx-1 px-1 focus-visible:ring-2 focus-visible:ring-green-600">
+                <span className="flex items-center gap-3">
+                  <Icon className="h-5 w-5 text-green-600 transition-colors group-hover:text-green-700" />
+                  <span className="text-sm font-semibold text-slate-900">{title}</span>
+                </span>
+                <ChevronDown className="h-4 w-4 text-slate-500 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-3 space-y-2 text-sm text-slate-700">
+                <div><span className="font-semibold">How it works:</span> {desc}</div>
+                <div><span className="font-semibold">Comparison:</span> {comparison}</div>
+                <div><span className="font-semibold">Benefits:</span> {benefits}</div>
+              </div>
+            </details>
+          ))}
         </div>
-      </Section>
-
-      <Section className="pt-0">
-        <ServiceChips />
-      </Section>
-
-      <Section className="pt-0">
-        <QuoteCTA />
       </Section>
     </main>
   );
