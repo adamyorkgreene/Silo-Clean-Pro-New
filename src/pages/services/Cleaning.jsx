@@ -1,4 +1,4 @@
-import { ShieldCheck, SprayCan, Wind, Bug } from "lucide-react";
+import { ShieldCheck, SprayCan, Wind, Bug, Check } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -53,40 +53,72 @@ export default function Cleaning() {
         </Container>
       </section>
 
-      {/* Services list (cards) */}
+      {/* Services list (grouped, readable) */}
       <Section
         kicker="What we do"
         title="Our Silo Cleaning Services"
         subtitle="Comprehensive cleaning for grain, flour, cement ingredients, plastics and more."
       >
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {[
-            "Hang-up removal",
-            "Mold & bad grain removal",
-            "Vacuum truck services",
-            "High-volume vacuums & bin whips",
-            "Outside cleaning, media blasting & painting",
-            "Hydro blasting & dry ice blasting",
-            "Soda blasting",
-            "Dry cleaning of silos",
-            "Injection molding resin change-over silo cleaning",
-            "Grain / Flour / Cement ingredient silo cleaning",
-            "Soda ash / fly ash silo cleaning",
-            "Cleaning of any materials in a silo",
-            "Silo cone / rotten corn removal",
-            "KB systems silo cleaning",
-            "Bulk liquid tank cleaning + corrosion removal",
-            "Swab testing (if needed)",
-            "Silo cleaning for infestation",
-            "Silo sanitization",
-            "Galvanized corrugated silo cleaning",
-            "Baghouse cleaning / filter replacement",
-          ].map((i) => (
-            <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
-              {i}
-            </li>
-          ))}
-        </ul>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Methods & Tools</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Hang-up removal",
+                "High-volume vacuums & bin whips",
+                "Vacuum truck services",
+                "Outside cleaning, media blasting & painting",
+                "Hydro blasting & dry ice blasting",
+                "Soda blasting",
+                "Dry cleaning of silos",
+                "Baghouse cleaning / filter replacement",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Common Issues</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Mold & bad grain removal",
+                "Silo cone / rotten corn removal",
+                "Silo cleaning for infestation",
+                "Silo sanitization",
+                "Bulk liquid tank cleaning + corrosion removal",
+                "Swab testing (if needed)",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Materials & Systems</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Injection molding resin change-over silo cleaning",
+                "Grain / Flour / Cement ingredient silo cleaning",
+                "Soda ash / fly ash silo cleaning",
+                "Galvanized corrugated silo cleaning",
+                "KB systems silo cleaning",
+                "Cleaning of any materials in a silo",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Section>
 
       {/* CTA band */}
