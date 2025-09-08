@@ -1,4 +1,4 @@
-import { ShieldCheck, ClipboardCheck, Droplets, HardHat } from "lucide-react";
+import { ShieldCheck, ClipboardCheck, Droplets, HardHat, ChevronDown } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -113,6 +113,47 @@ export default function Inspection() {
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
           <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+
+      {/* FAQs */}
+      <Section
+        kicker="FAQ"
+        title="Common questions"
+        subtitle="What to expect from a professional silo inspection."
+        className="pt-0"
+      >
+        <div className="mr-auto space-y-4">
+          {[
+            {
+              q: "How often should silos be inspected?",
+              a: "As a guideline, every 3 years for concrete silos—frequency varies by age, use, and materials. We can recommend an interval for your site.",
+            },
+            {
+              q: "Do silos need to be empty?",
+              a: "Low or empty is preferred for access. We’ll advise options if product remains, and can perform safe entry when required.",
+            },
+            {
+              q: "What’s included in the inspection?",
+              a: "Structural checks, water intrusion identification, corrosion/paint assessment, safety features, and a written report with photos and recommendations.",
+            },
+            {
+              q: "How long does it take?",
+              a: "Often a half day to a full day per silo depending on size, condition, and access.",
+            },
+            {
+              q: "Do we receive documentation?",
+              a: "Yes. You’ll receive a clear report outlining findings, prioritized maintenance items, and suggested timelines.",
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="group p-5 rounded-2xl border bg-white open:bg-slate-50 shadow-sm">
+              <summary className="flex items-center justify-between gap-3 cursor-pointer select-none">
+                <span className="text-base font-semibold text-slate-900">{q}</span>
+                <ChevronDown className="h-5 w-5 text-slate-500 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 text-base text-slate-700">{a}</p>
+            </details>
+          ))}
         </div>
       </Section>
 

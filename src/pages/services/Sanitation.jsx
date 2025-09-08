@@ -1,4 +1,4 @@
-import { ShieldCheck, TestTube, Sparkles, Bug, Droplets } from "lucide-react";
+import { ShieldCheck, TestTube, Sparkles, Bug, Droplets, ChevronDown } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -134,6 +134,47 @@ export default function Sanitation() {
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
           <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+
+      {/* FAQs */}
+      <Section
+        kicker="FAQ"
+        title="Common questions"
+        subtitle="Sanitation methods, food safety, and turnaround times."
+        className="pt-0"
+      >
+        <div className="mr-auto space-y-4">
+          {[
+            {
+              q: "What sanitizers or chemicals do you use?",
+              a: "We use approved products appropriate for your application and provide SDS on request. Food‑contact safe options are available.",
+            },
+            {
+              q: "Is it food‑safe?",
+              a: "Yes—when required we follow GMP practices and can include post‑cleaning sanitation and optional swab testing.",
+            },
+            {
+              q: "How soon can we resume use?",
+              a: "After ventilation/cure times are met. Many jobs return to service the same day or next day depending on conditions.",
+            },
+            {
+              q: "Can you address infestation?",
+              a: "Yes. We remove contaminated material and sanitize affected areas, and can coordinate with pest control when needed.",
+            },
+            {
+              q: "Do we receive documentation?",
+              a: "Yes—procedure details and completion notes for your audit trail.",
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="group p-5 rounded-2xl border bg-white open:bg-slate-50 shadow-sm">
+              <summary className="flex items-center justify-between gap-3 cursor-pointer select-none">
+                <span className="text-base font-semibold text-slate-900">{q}</span>
+                <ChevronDown className="h-5 w-5 text-slate-500 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 text-base text-slate-700">{a}</p>
+            </details>
+          ))}
         </div>
       </Section>
 

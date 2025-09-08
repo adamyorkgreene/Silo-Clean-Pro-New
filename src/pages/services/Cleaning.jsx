@@ -1,4 +1,4 @@
-import { ShieldCheck, SprayCan, Wind, Bug, Check } from "lucide-react";
+import { ShieldCheck, SprayCan, Wind, Bug, Check, ChevronDown } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -128,6 +128,47 @@ export default function Cleaning() {
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
           <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+
+      {/* FAQs */}
+      <Section
+        kicker="FAQ"
+        title="Common questions"
+        subtitle="Quick answers about safety, waste handling, and downtime."
+        className="pt-0"
+      >
+        <div className="mr-auto space-y-4">
+          {[
+            {
+              q: "Is cleaning safe in confined spaces?",
+              a: "Yes. Our crews are confined-space certified and follow permit entry, ventilation, gas monitoring, and rescue protocols.",
+            },
+            {
+              q: "How do you handle waste and residue?",
+              a: "Dislodged material is vacuumed and contained for disposal per your site’s requirements. No chemical residue is left behind.",
+            },
+            {
+              q: "How much downtime should we plan for?",
+              a: "Depends on size and material, but many cleanings complete in a day or two. We offer night/weekend scheduling to minimize impact.",
+            },
+            {
+              q: "Which methods do you use?",
+              a: "We match tools to the problem: high‑volume vacs, bin whips, hydro and dry ice blasting, plus targeted sanitation when needed.",
+            },
+            {
+              q: "Do you service food‑grade facilities?",
+              a: "Yes. We follow GMP practices and can include sanitation and documentation appropriate for food‑grade operations.",
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="group p-5 rounded-2xl border bg-white open:bg-slate-50 shadow-sm">
+              <summary className="flex items-center justify-between gap-3 cursor-pointer select-none">
+                <span className="text-base font-semibold text-slate-900">{q}</span>
+                <ChevronDown className="h-5 w-5 text-slate-500 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 text-base text-slate-700">{a}</p>
+            </details>
+          ))}
         </div>
       </Section>
 

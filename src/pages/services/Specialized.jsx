@@ -1,4 +1,4 @@
-import { ShieldCheck, Package, Wrench, Sparkles } from "lucide-react";
+import { ShieldCheck, Package, Wrench, Sparkles, ChevronDown } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -80,6 +80,47 @@ export default function Specialized() {
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
           <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+      
+      {/* FAQs */}
+      <Section
+        kicker="FAQ"
+        title="Common questions"
+        subtitle="Plastic/resin changeovers, contamination control, and scheduling."
+        className="pt-0"
+      >
+        <div className="mr-auto space-y-4">
+          {[
+            {
+              q: "Can you support resin changeovers?",
+              a: "Yes. We provide rapid changeover cleaning to reduce cross‑contamination and get lines back up quickly.",
+            },
+            {
+              q: "How do you prevent contamination?",
+              a: "Targeted vacuuming, clean sweeps, and sanitation steps as needed. Residues are contained and removed from site.",
+            },
+            {
+              q: "Are methods safe for polymer silos and equipment?",
+              a: "We select non‑abrasive or low‑impact approaches and tune pressure/media to protect sensitive components.",
+            },
+            {
+              q: "Do you address static/ESD risks?",
+              a: "Yes—grounding and bonding practices are used where required and documented in our safety plan.",
+            },
+            {
+              q: "How do you schedule around production?",
+              a: "We coordinate nights/weekends and planned downtime to minimize business impact.",
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="group p-5 rounded-2xl border bg-white open:bg-slate-50 shadow-sm">
+              <summary className="flex items-center justify-between gap-3 cursor-pointer select-none">
+                <span className="text-base font-semibold text-slate-900">{q}</span>
+                <ChevronDown className="h-5 w-5 text-slate-500 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 text-base text-slate-700">{a}</p>
+            </details>
+          ))}
         </div>
       </Section>
       

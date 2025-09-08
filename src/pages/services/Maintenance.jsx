@@ -1,4 +1,4 @@
-import { ShieldCheck, Wrench, ClipboardCheck, Clock } from "lucide-react";
+import { ShieldCheck, Wrench, ClipboardCheck, Clock, ChevronDown } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -98,6 +98,47 @@ export default function Maintenance() {
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
           <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+
+      {/* FAQs */}
+      <Section
+        kicker="FAQ"
+        title="Common questions"
+        subtitle="How preventative maintenance reduces downtime and cost."
+        className="pt-0"
+      >
+        <div className="mr-auto space-y-4">
+          {[
+            {
+              q: "What’s included in a maintenance program?",
+              a: "Scheduled inspections, cleaning, documentation, and coordination with your team to address issues before they become outages.",
+            },
+            {
+              q: "Can maintenance occur during production?",
+              a: "We plan work in windows that minimize impact. Many tasks can be staged during off‑hours or coordinated downtime.",
+            },
+            {
+              q: "How do you prevent future hang‑ups?",
+              a: "Regular cleaning, flow verification, and targeted improvements to handling practices based on inspection findings.",
+            },
+            {
+              q: "Do you offer emergency response?",
+              a: "Yes—24/7 nationwide response for urgent blockages or safety concerns.",
+            },
+            {
+              q: "Is this available nationwide?",
+              a: "Yes. We support clients across the lower 48.",
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="group p-5 rounded-2xl border bg-white open:bg-slate-50 shadow-sm">
+              <summary className="flex items-center justify-between gap-3 cursor-pointer select-none">
+                <span className="text-base font-semibold text-slate-900">{q}</span>
+                <ChevronDown className="h-5 w-5 text-slate-500 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 text-base text-slate-700">{a}</p>
+            </details>
+          ))}
         </div>
       </Section>
 
