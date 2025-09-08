@@ -3,9 +3,6 @@ import { NavLink } from "react-router-dom";
 import { Brush, Search, ShieldCheck, Wrench } from "lucide-react";
 import Page from "./Page.jsx"
 import Section from "../components/Section.jsx";
-import ServiceChips from "../components/ServiceChips.jsx";
-import QuoteCTA from "../components/QuoteCTA.jsx";
-import WhyChooseUs from "../components/WhyChooseUs.jsx";
 
 /** Background Stream iframe that auto-scales to cover.
  *  Desktop (>=1050px): anchor to TOP (crop bottom more).

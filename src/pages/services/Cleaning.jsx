@@ -1,9 +1,6 @@
 import { ShieldCheck, SprayCan, Wind, Bug, Check, ChevronDown, ClipboardCheck, HardHat, Clock } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
-import WhyChooseUs from "../../components/WhyChooseUs.jsx";
-import ServiceChips from "../../components/ServiceChips.jsx";
-import QuoteCTA from "../../components/QuoteCTA.jsx";
 import Stat from "../../components/Stat.jsx";
 
 export default function Cleaning() {
