@@ -1,4 +1,4 @@
-import { ShieldCheck, ClipboardCheck, Droplets, HardHat, ChevronDown, Clock } from "lucide-react";
+import { ShieldCheck, ClipboardCheck, Droplets, HardHat, ChevronDown, Clock, Check } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -54,26 +54,61 @@ export default function Inspection() {
         </Container>
       </section>
 
-      {/* Services list */}
+      {/* Services list (grouped, readable) */}
       <Section
         kicker="What we check"
         title="Our Silo Inspection Services"
         subtitle="Catch structural issues early and keep operations safe and compliant."
       >
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {[
-            "Identifying water intrusion sources",
-            "Structural integrity assessment",
-            "Corrosion / paint integrity inspection",
-            "Top of silo safety inspection",
-            "Ladder well safety inspection",
-            "Access and safety feature review",
-          ].map((i) => (
-            <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
-              {i}
-            </li>
-          ))}
-        </ul>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Structural & Safety</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Structural integrity assessment",
+                "Access and safety feature review",
+                "Top of silo safety inspection",
+                "Ladder well safety inspection",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Moisture & Corrosion</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Identifying water intrusion sources",
+                "Corrosion / paint integrity inspection",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Components & Conditions</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Roof, shell, and cone condition",
+                "Seals and penetrations",
+                "Signs of wear or deformation",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Section>
 
       {/* Guidance / education band + secondary image */}
