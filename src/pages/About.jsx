@@ -205,19 +205,19 @@ export default function About() {
       {/* Applicable Industries icons */}
       <Section
         kicker="Industries"
-        title="Applicable industries"
-        subtitle="Versatile across food & beverage, plastics, cement, transportation, power, remediation, foundry, and packaging."
+        title="Industries we serve"
+        subtitle="Focused on bulk storage: grain, food, plastics, cement, chemicals, energy, and more."
       >
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mx-auto">
           {[
-            { Icon: Newspaper, label: "Printing" },
-            { Icon: Layers, label: "Textiles" },
-            { Icon: Utensils, label: "Food & Beverage" },
-            { Icon: Plane, label: "Transportation" },
-            { Icon: Plug, label: "Power" },
-            { Icon: Flame, label: "Remediation" },
-            { Icon: Factory, label: "Foundry" },
-            { Icon: Package, label: "Packaging" },
+            { Icon: Factory, label: "Grain handling" },
+            { Icon: Package, label: "Feed mills" },
+            { Icon: Utensils, label: "Food & beverage" },
+            { Icon: Layers, label: "Plastics & resins" },
+            { Icon: Landmark, label: "Cement & aggregates" },
+            { Icon: Plug, label: "Energy & biomass" },
+            { Icon: Flame, label: "Chemicals & fertilizers" },
+            { Icon: Newspaper, label: "Pet food & nutrition" },
           ].map(({ Icon, label }) => (
             <div key={label} className="flex flex-col items-center justify-center p-2">
               <Icon className="h-12 w-12 sm:h-14 sm:w-14 text-slate-800" />
@@ -227,21 +227,21 @@ export default function About() {
         </div>
       </Section>
 
-      {/* Industrial Applications accordion */}
+      {/* Typical problems we solve (accordion) */}
       <Section
-        kicker="Industrial Applications"
-        title="Where dry ice blasting fits"
-        subtitle="Open each to see comparisons and benefits."
+        kicker="Problems we solve"
+        title="Common flow and capacity issues"
+        subtitle="Expand each to see how we address it safely and efficiently."
         className="pt-0"
       >
         <div className="mr-auto space-y-3">
           {[
-            { icon: Paintbrush, title: "Rust removal", comparison: "Unlike sandblasting, there’s minimal cleanup.", benefits: "Non‑abrasive • No secondary waste", desc: "Freeze‑lift action releases corrosion without harming base material." },
-            { icon: Eraser, title: "Adhesive & paint removal", comparison: "More precise than scraping or chemicals.", benefits: "No harsh chemicals • Minimal residue", desc: "Breaks the bond between coatings and substrate for clean release." },
-            { icon: Flame, title: "Fire remediation", comparison: "Faster and cleaner than sanding/chemicals.", benefits: "No secondary waste • Odor reduction", desc: "Removes soot and smoke staining while preserving surfaces." },
-            { icon: SprayCan, title: "Mold cleaning & remediation", comparison: "More thorough than scrubbing/chemicals.", benefits: "Chemical‑free • Helps reduce regrowth", desc: "Cold temperature assists spore deactivation while removing contamination." },
-            { icon: Wrench, title: "Equipment & machinery", comparison: "Less teardown; faster turnarounds.", benefits: "No water/abrasives • Safe for electrical", desc: "Removes grease and process buildup without full disassembly in many cases." },
-            { icon: Landmark, title: "Historical restoration", comparison: "Gentler than pressure washing/chemicals.", benefits: "Non‑abrasive • Chemical‑free", desc: "Cleans grime and pollutants while preserving detail." },
+            { icon: Layers, title: "Bridging / arching", comparison: "Blocks discharge and stalls flow.", benefits: "Restores flow • Recovers capacity", desc: "Bin‑whip/air methods break crusts from roof manways; entry only if required." },
+            { icon: Package, title: "Rat‑holing", comparison: "Flow restricted to a narrow channel.", benefits: "Reclaims volume • Reduces spoilage", desc: "Remote agitation and vacuum removal reclaim sidewall build‑up." },
+            { icon: Droplets, title: "Hydrated or heat‑set product", comparison: "Material locks to walls (cement/lime/resins).", benefits: "Safer removal • Liner‑safe techniques", desc: "Approved methods (incl. Cardox where permitted) fracture deposits with control." },
+            { icon: Flame, title: "Combustible dust accumulation", comparison: "Elevates deflagration risk and contamination.", benefits: "Supports DHA • Safer housekeeping", desc: "Targeted cleaning and vacuum capture reduce accumulations around bin tops and galleries." },
+            { icon: Package, title: "Foreign object intrusions", comparison: "Tools/liners left inside impede flow.", benefits: "Safe extraction • Minimal downtime", desc: "Planned retrieval under PRCS controls as needed." },
+            { icon: Wrench, title: "Mechanical failure aftermath", comparison: "Stuck gates or damaged aeration pads.", benefits: "Return to service faster", desc: "Cleanout + coordination with your maintenance team during repair." },
           ].map(({ icon: Icon, title, comparison, benefits, desc }) => (
             <details
               key={title}
@@ -255,12 +255,84 @@ export default function About() {
                 <ChevronDown className="h-4 w-4 text-slate-500 transition-transform group-open:rotate-180" />
               </summary>
               <div className="mt-3 space-y-2 text-sm text-slate-700">
-                <div><span className="font-semibold">How it works:</span> {desc}</div>
-                <div><span className="font-semibold">Comparison:</span> {comparison}</div>
-                <div><span className="font-semibold">Benefits:</span> {benefits}</div>
+                <div><span className="font-semibold">Issue:</span> {comparison}</div>
+                <div><span className="font-semibold">Approach:</span> {desc}</div>
+                <div><span className="font-semibold">Outcome:</span> {benefits}</div>
               </div>
             </details>
           ))}
+        </div>
+      </Section>
+
+      {/* Methods & tooling */}
+      <Section
+        kicker="Methods & tooling"
+        title="Non‑entry first, PRCS when required"
+        subtitle="We match the method to the product, vessel, and hazard profile."
+        className="pt-0"
+      >
+        <div className="grid gap-6 sm:grid-cols-2">
+          <ul className="space-y-2 text-sm text-slate-700">
+            {[
+              "Roof‑deployed bin whips and rotary heads",
+              "Remote vacuuming from top/side access ports",
+              "Air‑lancing for debridging (with dust/LEL controls)",
+              "Cardox CO₂ tubes where engineered and permitted",
+            ].map((t) => (
+              <li key={t} className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="space-y-2 text-sm text-slate-700">
+            {[
+              "Tripod/davit & retrieval with continuous gas monitoring",
+              "Full LOTO and forced ventilation when entering",
+              "ATEX/anti‑static vacuums and tools for dust contexts",
+              "Liner‑safe, low‑impact techniques for coated vessels",
+            ].map((t) => (
+              <li key={t} className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* Safety & compliance */}
+      <Section
+        kicker="Safety"
+        title="Permit‑required confined space done right"
+        subtitle="OSHA 1910.146 + 1910.147 aligned, with NFPA 61/652 awareness for combustible dust."
+        className="pt-0"
+      >
+        <div className="grid gap-6 sm:grid-cols-2">
+          <ul className="space-y-2 text-sm text-slate-700">
+            {[
+              "Site‑specific JHA/JSA and rescue coordination",
+              "Atmospheric testing logs and continuous monitoring",
+              "LOTO of mechanical, pneumatic, and electrical sources",
+            ].map((t) => (
+              <li key={t} className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="space-y-2 text-sm text-slate-700">
+            {[
+              "Ventilation, intrinsically safe lighting, and comms",
+              "Housekeeping around bin tops and galleries",
+              "Final sweep & verification before return to service",
+            ].map((t) => (
+              <li key={t} className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-green-600" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
     </main>
