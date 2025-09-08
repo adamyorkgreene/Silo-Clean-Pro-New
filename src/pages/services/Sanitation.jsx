@@ -1,4 +1,4 @@
-import { ShieldCheck, TestTube, Sparkles, Bug, Droplets, ChevronDown, HardHat, Clock } from "lucide-react";
+import { ShieldCheck, TestTube, Sparkles, Bug, Droplets, ChevronDown, HardHat, Clock, Check } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -60,20 +60,56 @@ export default function Sanitation() {
         title="Advanced Silo Sanitation Services"
         subtitle="Comprehensive sanitation for grain silos and related storage systems."
       >
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {[
-            "Comprehensive sanitation programs for grain and feed",
-            "Targeted contamination removal and mitigation",
-            "Infestation response and prevention",
-            "Sanitizing applications tailored to stored materials",
-            "Regular maintenance and inspection integration",
-            "Swab testing available upon request",
-          ].map((i) => (
-            <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
-              {i}
-            </li>
-          ))}
-        </ul>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Methods & Controls</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Targeted sanitation after cleaning",
+                "Food-safe options where required",
+                "Swab testing available",
+                "Confined-space safe procedures",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Contamination & Response</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Infestation mitigation",
+                "Mold / bad product removal",
+                "Odor and residue reduction",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">Integration & Options</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {[
+                "Tailored to stored materials",
+                "Integrates with maintenance programs",
+                "Night/weekend scheduling available",
+              ].map((text) => (
+                <li key={text} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Section>
 
       {/* Highlights band + secondary image */}
