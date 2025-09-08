@@ -126,13 +126,6 @@ export default function Sanitation() {
           ))}
         </ul>
       </Section>
-
-      {/* Reusable sections */}
-      <Container>
-        <WhyChooseUs />
-        <ServiceChips />
-        <QuoteCTA />
-      </Container>
     </main>
   );
 }

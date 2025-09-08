@@ -105,12 +105,7 @@ export default function Inspection() {
           </div>
         </section>
       </Container>
-
-      <Container>
-        <WhyChooseUs />
-        <ServiceChips />
-        <QuoteCTA />
-      </Container>
+      
     </main>
   );
 }

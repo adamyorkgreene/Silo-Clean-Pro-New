@@ -72,13 +72,6 @@ export default function Specialized() {
           ))}
         </ul>
       </Section>
-
-      {/* Reusable sections */}
-      <Container>
-        <WhyChooseUs />
-        <ServiceChips />
-        <QuoteCTA />
-      </Container>
     </main>
   );
 }

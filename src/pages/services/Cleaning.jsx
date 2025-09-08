@@ -89,12 +89,6 @@ export default function Cleaning() {
         </ul>
       </Section>
 
-      <Container>
-        <WhyChooseUs />
-        <ServiceChips />
-        <QuoteCTA />
-      </Container>
-
     </main>
   );
 }

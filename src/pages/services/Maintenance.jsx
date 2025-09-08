@@ -90,12 +90,7 @@ export default function Maintenance() {
           ))}
         </ul>
       </Section>
-
-      <Container>
-        <WhyChooseUs />
-        <ServiceChips />
-        <QuoteCTA />
-      </Container>
+      
     </main>
   );
 }
