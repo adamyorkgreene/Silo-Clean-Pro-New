@@ -4,6 +4,7 @@ import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
 import ServiceChips from "../../components/ServiceChips.jsx";
 import QuoteCTA from "../../components/QuoteCTA.jsx";
+import Stat from "../../components/Stat.jsx";
 
 export default function Cleaning() {
   return (
@@ -118,6 +119,15 @@ export default function Cleaning() {
               ))}
             </ul>
           </div>
+        </div>
+      </Section>
+
+      {/* Proof / badges */}
+      <Section kicker="Why us" title="Safety, speed, and reliability">
+        <div className="grid gap-6 sm:grid-cols-3">
+          <Stat value="24/7" label="Emergency response" />
+          <Stat value=">10yrs" label="Nationwide experience" />
+          <Stat value="OSHA" label="Approved & confined-space certified" />
         </div>
       </Section>
 
