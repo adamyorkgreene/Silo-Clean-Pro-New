@@ -1,4 +1,4 @@
-import { ShieldCheck, SprayCan, Wind, Bug, Check, ChevronDown } from "lucide-react";
+import { ShieldCheck, SprayCan, Wind, Bug, Check, ChevronDown, ClipboardCheck, HardHat, Clock } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -118,6 +118,62 @@ export default function Cleaning() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Guidance / education band + secondary image */}
+      <Section
+        kicker="Guidance"
+        title="Silo cleaning, simplified"
+        subtitle="What to expect and how to prepare for service."
+        className="pt-0"
+      >
+        <div className="grid items-start gap-8 md:grid-cols-2">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                { Icon: ShieldCheck, t: "OSHA + confined-space" },
+                { Icon: Wind, t: "High-volume vacs & bin whips" },
+                { Icon: SprayCan, t: "Dry ice / hydro options" },
+                { Icon: ClipboardCheck, t: "Clear before/after notes" },
+                { Icon: Clock, t: "Fast turnarounds" },
+                { Icon: HardHat, t: "Night/weekend scheduling" },
+              ].map(({ Icon, t }) => (
+                <div key={t} className="flex items-center gap-3 rounded-xl border bg-slate-50 p-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800">{t}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5">
+              <h4 className="text-sm font-semibold text-slate-900">Typical timeline</h4>
+              <ul className="mt-2 space-y-2 text-sm text-slate-700">
+                {[
+                  "Arrival + safety briefing",
+                  "Confined-space prep & air monitoring",
+                  "Material removal with vacs/bin whips",
+                  "Targeted blasting or sanitation (if needed)",
+                  "Final sweep + documentation",
+                ].map((step) => (
+                  <li key={step} className="flex gap-2">
+                    <Check className="mt-0.5 h-4 w-4 text-green-600" />
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <img
+              src="/silo_img_2.jpg"
+              alt="Technicians performing silo cleaning operations"
+              className="w-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </Section>
