@@ -1,4 +1,4 @@
-import { ShieldCheck, TestTube, Sparkles, Bug, Droplets, ChevronDown } from "lucide-react";
+import { ShieldCheck, TestTube, Sparkles, Bug, Droplets, ChevronDown, HardHat, Clock } from "lucide-react";
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
@@ -76,24 +76,44 @@ export default function Sanitation() {
         </ul>
       </Section>
 
-      {/* The Value of a Clean Silo + supporting image */}
-      <Container>
-        <section className="mt-4 grid items-start gap-8 md:grid-cols-2">
+      {/* Highlights band + secondary image */}
+      <Section
+        kicker="At a Glance"
+        title="Sanitation Highlights"
+        subtitle="GMP-friendly methods, OSHA-approved entry, optional swab testing, fast return to service."
+        className="pt-0"
+      >
+        <div className="grid items-start gap-8 md:grid-cols-2">
           <div className="rounded-2xl border bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">The Value of a Clean Silo</h3>
-            <p className="mt-2 text-slate-600">
-              A clean silo protects stored materials from contaminants, pests, and spoilage. With a professionally sanitized silo, your grain is safer for storage, use, sale, and feed. Because sanitation requires specialized equipment and techniques, partnering with an experienced team like Silo Clean Pro is essential.
-            </p>
-            <p className="mt-2 text-slate-600">
-              We combine advanced methods with rigorous safety practices to keep your operation compliant and efficient—so you can focus on throughput, not downtime.
-            </p>
-            <div className="mt-4">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                { Icon: ShieldCheck, t: "OSHA + confined-space" },
+                { Icon: TestTube, t: "Swab testing (optional)" },
+                { Icon: Sparkles, t: "Food-safe options available" },
+                { Icon: Bug, t: "Infestation mitigation" },
+                { Icon: Clock, t: "Fast turnarounds" },
+                { Icon: HardHat, t: "Night/weekend scheduling" },
+              ].map(({ Icon, t }) => (
+                <div key={t} className="flex items-center gap-3 rounded-xl border bg-slate-50 p-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800">{t}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 flex gap-3">
+              <a
+                href="/quote"
+                className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+              >
+                Request sanitation service
+              </a>
               <a
                 href="tel:8886236050"
-                className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
               >
-                <Droplets className="h-5 w-5 text-white/90" />
-                Talk to a Sanitation Specialist
+                Call 888-623-6050
               </a>
             </div>
           </div>
@@ -105,8 +125,8 @@ export default function Sanitation() {
               loading="lazy"
             />
           </div>
-        </section>
-      </Container>
+        </div>
+      </Section>
 
       {/* How We Sanitize */}
       <Section
@@ -119,7 +139,7 @@ export default function Sanitation() {
             "Deep cleaning and sanitation after inspection",
             "Integration with ongoing maintenance programs",
             "Cutting-edge equipment and confined-space protocols",
-            "Documented procedures and safety compliance",
+            "Site-specific safety planning and compliance",
           ].map((i) => (
             <li key={i} className="rounded-xl border bg-white p-4 text-sm shadow-sm">
               {i}
@@ -162,10 +182,7 @@ export default function Sanitation() {
               q: "Can you address infestation?",
               a: "Yes. We remove contaminated material and sanitize affected areas, and can coordinate with pest control when needed.",
             },
-            {
-              q: "Do we receive documentation?",
-              a: "Yes—procedure details and completion notes for your audit trail.",
-            },
+            // Removed documentation emphasis per updated messaging
           ].map(({ q, a }) => (
             <details key={q} className="group p-5 rounded-2xl border bg-white open:bg-slate-50 shadow-sm">
               <summary className="flex items-center justify-between gap-3 cursor-pointer select-none">
@@ -183,7 +200,7 @@ export default function Sanitation() {
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
             <h3 className="text-lg font-semibold text-slate-900">Ready to talk through your application?</h3>
-            <p className="text-slate-600">Request service or ask about rentals and training.</p>
+            <p className="text-slate-600">Request service or talk to a sanitation specialist.</p>
           </div>
           <div className="flex gap-3">
             <a
