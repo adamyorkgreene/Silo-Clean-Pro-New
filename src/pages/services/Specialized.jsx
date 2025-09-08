@@ -1,63 +1,65 @@
-import Page from "../Page.jsx";
 import { ShieldCheck, Package, Wrench, Sparkles } from "lucide-react";
+import Section from "../../components/Section.jsx";
+import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
 import ServiceChips from "../../components/ServiceChips.jsx";
 import QuoteCTA from "../../components/QuoteCTA.jsx";
 
 export default function Specialized() {
   return (
-    <Page title="Specialized Silo Cleaning">
-      {/* Intro + image */}
-      <section className="grid items-center gap-8 md:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Plastic &amp; Injection Molding – Silo Cleaning
-          </h2>
-          <p className="mt-4 text-slate-600">
-            When it comes to silo cleaning, plastic and injection molding companies have specific
-            needs. Our highly-trained team ensures your silos remain clean, safe, and efficient—
-            preventing contamination and keeping production flowing.
-          </p>
-
-          {/* quick badges */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            {[
-              { Icon: ShieldCheck, text: "OSHA-Approved" },
-              { Icon: Package, text: "Plastic & Resin Expertise" },
-              { Icon: Wrench, text: "Surface Preparation" },
-              { Icon: Sparkles, text: "Sanitizing Applications" },
-            ].map(({ Icon, text }) => (
-              <span
-                key={text}
-                className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1 text-sm text-slate-700 shadow-sm"
-              >
-                <Icon className="h-4 w-4 text-green-600" />
-                {text}
-              </span>
-            ))}
+    <main className="bg-slate-50">
+      {/* Hero header */}
+      <section className="relative isolate overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80" />
+        <Container>
+          <div className="py-12 lg:py-20 grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-green-400">Services</p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Specialized Silo Cleaning</h1>
+              <p className="mt-3 max-w-2xl text-slate-200">
+                Plastic and injection molding operations have specific requirements. Our highly-trained team keeps silos clean, safe, and efficient—preventing contamination and maintaining flow.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {[
+                  { Icon: ShieldCheck, text: "OSHA-Approved" },
+                  { Icon: Package, text: "Plastic & Resin Expertise" },
+                  { Icon: Wrench, text: "Surface Preparation" },
+                  { Icon: Sparkles, text: "Sanitizing Applications" },
+                ].map(({ Icon, text }) => (
+                  <span key={text} className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm text-white shadow-sm">
+                    <Icon className="h-4 w-4 text-green-400" />
+                    {text}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/quote"
+                  className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                >
+                  Request service
+                </a>
+              </div>
+            </div>
+            <figure className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src="/silo_img_4.jpg"
+                alt="Technicians cleaning plastic and injection molding silos"
+                className="w-full h-auto rounded-xl object-cover"
+                loading="lazy"
+              />
+            </figure>
           </div>
-        </div>
-
-        {/* image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
-          <img
-            src="/silo_img_4.jpg"
-            alt="Technicians cleaning plastic and injection molding silos"
-            className="w-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        </Container>
       </section>
 
       {/* Services list */}
-      <section className="mt-12">
-        <h3 className="text-xl font-semibold text-slate-900">Our Specialized Cleaning Services</h3>
-        <p className="mt-2 text-slate-600">
-          Tailored solutions for plastics and injection molding facilities, including resin
-          changeovers and sanitization protocols.
-        </p>
-
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+      <Section
+        kicker="What we do"
+        title="Our Specialized Cleaning Services"
+        subtitle="Tailored solutions for plastics and injection molding facilities, including resin changeovers and sanitization protocols."
+      >
+        <ul className="grid gap-3 sm:grid-cols-2">
           {[
             "Plastic & Injection Molding Silo Cleaning",
             "Resin change-over silo cleaning",
@@ -69,14 +71,14 @@ export default function Specialized() {
             </li>
           ))}
         </ul>
-      </section>
+      </Section>
 
       {/* Reusable sections */}
-      <WhyChooseUs />
-
-      <ServiceChips />
-
-      <QuoteCTA />
-    </Page>
+      <Container>
+        <WhyChooseUs />
+        <ServiceChips />
+        <QuoteCTA />
+      </Container>
+    </main>
   );
 }

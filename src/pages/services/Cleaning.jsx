@@ -1,60 +1,65 @@
-import { NavLink } from "react-router-dom";
-import { ShieldCheck, SprayCan, Wind, Bug, Hammer } from "lucide-react";
-import Page from "../Page.jsx";
+import { ShieldCheck, SprayCan, Wind, Bug } from "lucide-react";
+import Section from "../../components/Section.jsx";
+import Container from "../../components/Container.jsx";
 import WhyChooseUs from "../../components/WhyChooseUs.jsx";
 import ServiceChips from "../../components/ServiceChips.jsx";
 import QuoteCTA from "../../components/QuoteCTA.jsx";
 
 export default function Cleaning() {
   return (
-    <Page title="Silo Cleaning">
-      {/* Lead intro + hero image */}
-      <section className="grid items-center gap-8 md:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Professional Silo Cleaning Services You Can Trust
-          </h2>
-          <p className="mt-4 text-slate-600">
-            We are a dependable, certified, and highly-trained silo cleaning company serving clients nationwide.
-            After a thorough inspection we use the latest in high-volume grain vacuums, bin whips, and other
-            technologies to restore safety and flow.
-          </p>
-
-          {/* quick badges */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            {[
-              { Icon: ShieldCheck, text: "OSHA-Approved" },
-              { Icon: Wind, text: "High-Volume Vacs" },
-              { Icon: SprayCan, text: "Media Blasting" },
-              { Icon: Bug, text: "Sanitation & Infestation" },
-            ].map(({ Icon, text }) => (
-              <span key={text} className="inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1 text-sm text-slate-700 shadow-sm">
-                <Icon className="h-4 w-4 text-green-600" />
-                {text}
-              </span>
-            ))}
+    <main className="bg-slate-50">
+      {/* Hero header */}
+      <section className="relative isolate overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80" />
+        <Container>
+          <div className="py-12 lg:py-20 grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-green-400">Services</p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Silo Cleaning</h1>
+              <p className="mt-3 max-w-2xl text-slate-200">
+                We are a dependable, certified, and highly-trained silo cleaning company serving clients nationwide. After a thorough inspection we use the latest in high-volume grain vacuums, bin whips, and other technologies to restore safety and flow.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/quote"
+                  className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                >
+                  Request service
+                </a>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {[
+                  { Icon: ShieldCheck, text: "OSHA-Approved" },
+                  { Icon: Wind, text: "High-Volume Vacs" },
+                  { Icon: SprayCan, text: "Media Blasting" },
+                  { Icon: Bug, text: "Sanitation & Infestation" },
+                ].map(({ Icon, text }) => (
+                  <span key={text} className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm text-white shadow-sm">
+                    <Icon className="h-4 w-4 text-green-400" />
+                    {text}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <figure className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src="/silo_img_2.jpg"
+                alt="Technicians performing silo cleaning operations"
+                className="w-full h-auto rounded-xl object-cover"
+                loading="lazy"
+              />
+            </figure>
           </div>
-        </div>
-
-        {/* image */}
-        <div className="overflow-hidden rounded-2xl shadow-lg max-w-[75%] mx-auto">
-          <img
-            src="/silo_img_2.jpg"
-            alt="Technicians performing silo cleaning operations"
-            className="w-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        </Container>
       </section>
 
       {/* Services list (cards) */}
-      <section className="mt-12">
-        <h3 className="text-xl font-semibold text-slate-900">Our Silo Cleaning Services</h3>
-        <p className="mt-2 text-slate-600">
-          Comprehensive cleaning for grain, flour, cement ingredients, plastics and more.
-        </p>
-
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+      <Section
+        kicker="What we do"
+        title="Our Silo Cleaning Services"
+        subtitle="Comprehensive cleaning for grain, flour, cement ingredients, plastics and more."
+      >
+        <ul className="grid gap-3 sm:grid-cols-2">
           {[
             "Hang-up removal",
             "Mold & bad grain removal",
@@ -82,14 +87,14 @@ export default function Cleaning() {
             </li>
           ))}
         </ul>
-      </section>
+      </Section>
 
-      <WhyChooseUs />
+      <Container>
+        <WhyChooseUs />
+        <ServiceChips />
+        <QuoteCTA />
+      </Container>
 
-      <ServiceChips />
-
-      <QuoteCTA />
-
-    </Page>
+    </main>
   );
 }
