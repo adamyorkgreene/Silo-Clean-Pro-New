@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Brush, Search, ShieldCheck, Wrench } from "lucide-react";
-import Page from "./Page.jsx"
 import Section from "../components/Section.jsx";
+import Stat from "../components/Stat.jsx";
 
 /** Background Stream iframe that auto-scales to cover.
  *  Desktop (>=1050px): anchor to TOP (crop bottom more).
@@ -160,6 +160,92 @@ export default function ServicesIndex() {
           </div>
         </div>
       </section>
+
+      {/* Services overview */}
+      <Section
+        kicker="Services"
+        title="Comprehensive silo solutions"
+        subtitle="Cleaning, inspection, sanitation, and maintenance — tailored to your product, vessel, and schedule."
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              t: "Cleaning",
+              d: "Bin whips, high‑CFM vacs, hang‑up & mold removal.",
+              icon: Brush,
+              to: "/services/cleaning",
+            },
+            {
+              t: "Inspection",
+              d: "Structural & safety checks, water intrusion ID.",
+              icon: Search,
+              to: "/services/inspection",
+            },
+            {
+              t: "Sanitation",
+              d: "Food‑safe options, infestation mitigation, swab testing.",
+              icon: ShieldCheck,
+              to: "/services/sanitation",
+            },
+            {
+              t: "Maintenance",
+              d: "Preventative programs that minimize downtime.",
+              icon: Wrench,
+              to: "/services/maintenance",
+            },
+          ].map((c) => (
+            <div
+              key={c.t}
+              className="group rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-600/10 text-green-700">
+                <c.icon size={20} strokeWidth={2} />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">{c.t}</h3>
+              <p className="mt-1 text-sm text-slate-600">{c.d}</p>
+              <NavLink
+                to={c.to}
+                className="mt-4 inline-flex text-sm font-semibold text-green-700"
+              >
+                Learn more →
+              </NavLink>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Proof / badges */}
+      <Section kicker="Why us" title="Safety, speed, and reliability" className="pt-0">
+        <div className="grid gap-6 sm:grid-cols-3">
+          <Stat value="24/7" label="Emergency response" />
+          <Stat value=">10yrs" label="Nationwide experience" />
+          <Stat value="OSHA" label="Approved & confined-space certified" />
+        </div>
+      </Section>
+
+      {/* CTA band */}
+      <Section className="pt-0">
+        <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
+          <div>
+            <h3 className="text-lg font-semibold text-slate-900">Ready to talk through your application?</h3>
+            <p className="text-slate-600">Request service or schedule a consultation.</p>
+          </div>
+          <div className="flex gap-3">
+            <NavLink
+              to="/quote"
+              className="inline-flex items-center rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+            >
+              Request service
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+            >
+              Schedule a consultation
+            </NavLink>
+          </div>
+        </div>
+      </Section>
     </main>
   );
 }
