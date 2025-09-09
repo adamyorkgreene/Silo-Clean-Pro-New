@@ -4,6 +4,7 @@ import {
   Clock,
   HardHat,
   MapPin,
+  Droplets,
   Newspaper,
   Layers,
   Utensils,
