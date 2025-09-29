@@ -72,7 +72,8 @@ export default function Contact() {
     }
     setStatus({ state: "loading", msg: "Sending..." });
     try {
-      const res = await fetch("/api/contact", {
+      const apiBase = import.meta.env?.VITE_API_BASE || "";
+      const res = await fetch(`${apiBase}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, message, "cf-turnstile-response": token }),

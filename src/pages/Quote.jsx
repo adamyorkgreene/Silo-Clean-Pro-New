@@ -74,7 +74,8 @@ export default function Quote() {
     }
     setStatus({ state: "loading", msg: "Sending..." });
     try {
-      const res = await fetch("/api/quote", {
+      const apiBase = import.meta.env?.VITE_API_BASE || "";
+      const res = await fetch(`${apiBase}/api/quote`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, company, email, phone, serviceType, details, "cf-turnstile-response": token }),
