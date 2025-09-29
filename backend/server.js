@@ -10,7 +10,8 @@ import https from 'https';
 dotenv.config();
 
 const app = express();
-const port = Number(process.env.PORT || 5000);
+// Bind to port 8025 by default (can still be overridden via PORT)
+const port = Number(process.env.PORT || 8025);
 
 // CORS (allow local dev and production domain via ALLOW_ORIGIN, or * by default)
 const allowOrigin = process.env.ALLOW_ORIGIN || '*';
@@ -229,4 +230,3 @@ process.on('unhandledRejection', (err) => console.error('Unhandled rejection:', 
 process.on('uncaughtException', (err) => console.error('Uncaught exception:', err));
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
-
