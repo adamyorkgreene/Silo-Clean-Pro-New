@@ -19,6 +19,7 @@ import Contact from "./pages/Contact.jsx";
 import Quote from "./pages/Quote.jsx";
 import Blog from "./pages/Blog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
+import ThankYou from "./pages/ThankYou.jsx";
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/services/specialized" element={<Specialized />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<Quote />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
