@@ -12,6 +12,7 @@ import Sanitation from "./pages/services/Sanitation.jsx";
 import Maintenance from "./pages/services/Maintenance.jsx";
 import Specialized from "./pages/services/Specialized.jsx";
 import CleaningGeorgia from "./pages/services/CleaningGeorgia.jsx";
+import CleaningColorado from "./pages/services/CleaningColorado.jsx";
 import Contact from "./pages/Contact.jsx";
 import Quote from "./pages/Quote.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/services" element={<ServicesIndex />} />
           <Route path="/services/cleaning" element={<Cleaning />} />
           <Route path="/silo-cleaning-services-atlanta-ga" element={<CleaningGeorgia />} />
+          <Route path="/colorado-silo-cleaning-services" element={<CleaningColorado />} />
           <Route path="/services/inspection" element={<Inspection />} />
           <Route path="/services/sanitation" element={<Sanitation />} />
           <Route path="/services/maintenance" element={<Maintenance />} />
