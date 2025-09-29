@@ -19,10 +19,10 @@ export default function CleaningIdaho() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="tel:18886236050"
+                  href="tel:+12085459412"
                   className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
                 >
-                  <Phone className="h-4 w-4" /> Call (888) 623-6050
+                  <Phone className="h-4 w-4" /> Call (208) 545-9412
                 </a>
                 <a
                   href="/quote"
@@ -132,14 +132,14 @@ export default function CleaningIdaho() {
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
             <h3 className="text-lg font-semibold text-slate-900">Request an Idaho quote</h3>
-            <p className="text-slate-600">Serving Boise and all of Idaho. Call us at (888) 623-6050.</p>
+            <p className="text-slate-600">Serving Boise and all of Idaho. Call us at (208) 545-9412.</p>
           </div>
           <div className="flex gap-3">
             <a
-              href="tel:18886236050"
+              href="tel:+12085459412"
               className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
             >
-              <Phone className="h-4 w-4" /> Call (888) 623-6050
+              <Phone className="h-4 w-4" /> Call (208) 545-9412
             </a>
             <a
               href="/quote"
@@ -261,10 +261,10 @@ export default function CleaningIdaho() {
           </div>
           <div className="flex gap-3">
             <a
-              href="tel:18886236050"
+              href="tel:+12085459412"
               className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
             >
-              <Phone className="h-4 w-4" /> Call (888) 623-6050
+              <Phone className="h-4 w-4" /> Call (208) 545-9412
             </a>
             <a
               href="/quote"
@@ -278,4 +278,3 @@ export default function CleaningIdaho() {
     </main>
   );
 }
-
