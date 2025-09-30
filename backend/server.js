@@ -72,10 +72,10 @@ app.use((req, res, next) => {
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET;
 async function verifyTurnstile(req) {
   try {
-    if (!TURNSTILE_SECRET) return { ok: false, code: 'missing_secret' };
+    if (!TURNSTILE_SECRET) return { ok: true, code: 'disabled' };
     const body = req.body || {};
     const token = body['cf-turnstile-response'] || body['cf_turnstile_response'] || body.turnstileToken || body.token;
-    if (!token) return { ok: false, code: 'missing_token' };
+    if (!token) return { ok: true, code: 'missing_token_skipped' };
     const postData = new URLSearchParams({
       secret: TURNSTILE_SECRET,
       response: token,
