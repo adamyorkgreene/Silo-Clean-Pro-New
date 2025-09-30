@@ -28,6 +28,46 @@ app.use(
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 
+/* ---------- SEO redirects (old -> new) ---------- */
+const redirects = new Map([
+  // Core services
+  ['/silo-cleaning-services', '/services/cleaning'],
+  ['/silo-inspection-services', '/services/inspection'],
+  ['/specialized-silo-cleaning', '/services/specialized'],
+  ['/silo-sanitation', '/services/sanitation'],
+  ['/silo-maintenance', '/services/maintenance'],
+  // Company pages
+  ['/about-us', '/about'],
+  ['/contact-us', '/contact'],
+  ['/request-a-quote', '/quote'],
+  // Location landing pages
+  ['/silo-cleaning-services-atlanta-ga', '/silo-cleaning-services-atlanta-ga'],
+  ['/southern-california-silo-services', '/southern-california-silo-services'],
+  ['/idaho-silo-cleaning-services', '/idaho-silo-cleaning-services'],
+  ['/colorado-silo-cleaning-services', '/colorado-silo-cleaning-services'],
+  ['/north-carolina-silo-cleaning-services', '/north-carolina-silo-cleaning-services'],
+  // Blog posts
+  ['/sika-has-launched-a-new-silo-sealant', '/blog/sika-silo-sealant-launch'],
+  ['/why-you-need-a-professional-silo-cleaner', '/blog/why-professional-silo-cleaner'],
+]);
+
+app.use((req, res, next) => {
+  // Normalize: drop trailing slash except for root
+  const pathOnly = req.path;
+  if (pathOnly.length > 1 && pathOnly.endsWith('/')) {
+    const noslash = pathOnly.replace(/\/+$/, '');
+    if (redirects.has(noslash) || redirects.has(pathOnly.slice(0, -1)) || !pathOnly.startsWith('/blog/')) {
+      return res.redirect(301, noslash + (req.url.endsWith('/') ? req.url.slice(pathOnly.length) : ''));
+    }
+  }
+  const key = pathOnly.replace(/\/+$/, '');
+  if (redirects.has(key)) {
+    const target = redirects.get(key);
+    return res.redirect(301, target);
+  }
+  next();
+});
+
 /* ---------- Cloudflare Turnstile ---------- */
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET;
 async function verifyTurnstile(req) {

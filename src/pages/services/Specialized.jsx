@@ -2,8 +2,16 @@ import { ShieldCheck, Package, Wrench, Sparkles, ChevronDown, Check, HardHat, Cl
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import Stat from "../../components/Stat.jsx";
+import { useSEO } from "../../lib/useSEO.js";
 
 export default function Specialized() {
+  useSEO({
+    title: "Specialized Silo Cleaning | Silo Clean Pro",
+    description: "Plastic and injection molding resin changeovers, KB Systems, dry ice and hydro blasting, and other specialized silo cleaning.",
+    canonical: "https://www.silocleanpro.com/services/specialized",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   return (
     <main className="bg-slate-50">
       {/* Hero header */}

@@ -2,8 +2,16 @@ import { ShieldCheck, ClipboardCheck, Droplets, HardHat, ChevronDown, Clock, Che
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import Stat from "../../components/Stat.jsx";
+import { useSEO } from "../../lib/useSEO.js";
 
 export default function Inspection() {
+  useSEO({
+    title: "Silo Inspection Services | Silo Clean Pro",
+    description: "Comprehensive silo inspections: structural checks, safety, water intrusion, documentation, and recommendations by experienced technicians.",
+    canonical: "https://www.silocleanpro.com/services/inspection",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   return (
     <main className="bg-slate-50">
       {/* Hero header */}

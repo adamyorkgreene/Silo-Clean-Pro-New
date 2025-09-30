@@ -15,6 +15,7 @@ import CleaningGeorgia from "./pages/services/CleaningGeorgia.jsx";
 import CleaningColorado from "./pages/services/CleaningColorado.jsx";
 import CleaningIdaho from "./pages/services/CleaningIdaho.jsx";
 import CleaningSouthernCalifornia from "./pages/services/CleaningSouthernCalifornia.jsx";
+import CleaningNorthCarolina from "./pages/services/CleaningNorthCarolina.jsx";
 import Contact from "./pages/Contact.jsx";
 import Quote from "./pages/Quote.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/colorado-silo-cleaning-services" element={<CleaningColorado />} />
           <Route path="/idaho-silo-cleaning-services" element={<CleaningIdaho />} />
           <Route path="/southern-california-silo-services" element={<CleaningSouthernCalifornia />} />
+          <Route path="/north-carolina-silo-cleaning-services" element={<CleaningNorthCarolina />} />
           <Route path="/services/inspection" element={<Inspection />} />
           <Route path="/services/sanitation" element={<Sanitation />} />
           <Route path="/services/maintenance" element={<Maintenance />} />

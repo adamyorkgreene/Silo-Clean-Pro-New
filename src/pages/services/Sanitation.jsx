@@ -2,8 +2,16 @@ import { ShieldCheck, TestTube, Sparkles, Bug, Droplets, ChevronDown, HardHat, C
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import Stat from "../../components/Stat.jsx";
+import { useSEO } from "../../lib/useSEO.js";
 
 export default function Sanitation() {
+  useSEO({
+    title: "Silo Sanitation Services | Silo Clean Pro",
+    description: "Targeted silo sanitation and infestation remediation for food and feed facilities. GMP-aware practices and documentation.",
+    canonical: "https://www.silocleanpro.com/services/sanitation",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   return (
     <main className="bg-slate-50">
       {/* Hero header */}

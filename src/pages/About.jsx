@@ -21,6 +21,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Section from "../components/Section.jsx";
+import { useSEO } from "../lib/useSEO.js";
 
 /** EXACT same scaler as Home */
 function HeroBackgroundScaledIframe({
@@ -98,6 +99,13 @@ function HeroBackgroundScaledIframe({
 }
 
 export default function About() {
+  useSEO({
+    title: "About Us | Silo Clean Pro",
+    description: "Silo Clean Pro is a division of GreeneServices, delivering nationwide silo cleaning, inspections, sanitation, and maintenance since 2004.",
+    canonical: "https://www.silocleanpro.com/about",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   return (
     <main className="bg-slate-50">
       {/* FULL-BLEED HERO – identical structure to Home */}

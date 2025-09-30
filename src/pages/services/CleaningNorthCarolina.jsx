@@ -4,11 +4,11 @@ import Container from "../../components/Container.jsx";
 import Stat from "../../components/Stat.jsx";
 import { useSEO } from "../../lib/useSEO.js";
 
-export default function CleaningSouthernCalifornia() {
+export default function CleaningNorthCarolina() {
   useSEO({
-    title: "Southern California Silo Cleaning | Silo Clean Pro",
-    description: "Silo cleaning across Los Angeles, Orange County, and the Inland Empire. West Coast service since 2004.",
-    canonical: "https://www.silocleanpro.com/southern-california-silo-services",
+    title: "North Carolina Silo Cleaning Services | Silo Clean Pro",
+    description: "Silo cleaning across North Carolina, including Raleigh and Charlotte. High-volume vacs, bin whips, blasting, and sanitation.",
+    canonical: "https://www.silocleanpro.com/north-carolina-silo-cleaning-services",
     og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
     twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
   });
@@ -20,23 +20,23 @@ export default function CleaningSouthernCalifornia() {
         <Container>
           <div className="py-12 lg:py-20 grid items-center gap-8 lg:grid-cols-2">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-green-400">Southern California • Los Angeles & Orange County</p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Southern California Silo Cleaning</h1>
+              <p className="text-xs font-semibold uppercase tracking-wider text-green-400">North Carolina • Raleigh & Charlotte</p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">North Carolina Silo Cleaning Services</h1>
               <p className="mt-3 max-w-2xl text-slate-200">
-                We are a dependable, certified, and highly-trained silo cleaning company serving clients nationwide. Servicing the West Coast since 2004, we deploy high-volume vacuums, bin whips, targeted blasting, and sanitation to restore safety and flow.
+                We are a dependable, certified, and highly-trained silo cleaning company serving clients across North Carolina. We deploy high-volume vacuums, bin whips, targeted blasting, and sanitation to restore safety and flow with minimal downtime.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="tel:+16574394401"
+                  href="tel:18886236050"
                   className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
                 >
-                  <Phone className="h-4 w-4" /> Call (657) 439-4401
+                  <Phone className="h-4 w-4" /> Call (888) 623-6050
                 </a>
                 <a
                   href="/quote"
                   className="inline-flex items-center rounded-xl border px-5 py-3 text-sm font-semibold text-white/90 bg-white/10 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2"
                 >
-                  Request a SoCal quote
+                  Request a North Carolina quote
                 </a>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -56,7 +56,7 @@ export default function CleaningSouthernCalifornia() {
             <figure className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-white/10">
               <img
                 src="/silo_img_2.jpg"
-                alt="Southern California silo cleaning technicians at work"
+                alt="North Carolina silo cleaning technicians at work"
                 className="w-full h-auto rounded-xl object-cover"
                 loading="lazy"
               />
@@ -65,10 +65,10 @@ export default function CleaningSouthernCalifornia() {
         </Container>
       </section>
 
-      {/* Services list (grouped, readable) */}
+      {/* Services list */}
       <Section
-        kicker="What we do in Southern California"
-        title="Southern California Silo Cleaning Services"
+        kicker="What we do in North Carolina"
+        title="Our North Carolina Silo Cleaning Services"
         subtitle="Comprehensive cleaning for grain, flour, cement ingredients, plastics and more."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -135,19 +135,19 @@ export default function CleaningSouthernCalifornia() {
         </div>
       </Section>
 
-      {/* SoCal CTA */}
+      {/* NC CTA */}
       <Section className="pt-0">
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">Request a Southern California quote</h3>
-            <p className="text-slate-600">Call us at (657) 439-4401 — Los Angeles, Orange County, and beyond.</p>
+            <h3 className="text-lg font-semibold text-slate-900">Request a North Carolina quote</h3>
+            <p className="text-slate-600">Call us at (888) 623-6050 — statewide service.</p>
           </div>
           <div className="flex gap-3">
             <a
-              href="tel:+16574394401"
+              href="tel:18886236050"
               className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
             >
-              <Phone className="h-4 w-4" /> Call (657) 439-4401
+              <Phone className="h-4 w-4" /> Call (888) 623-6050
             </a>
             <a
               href="/quote"
@@ -160,7 +160,7 @@ export default function CleaningSouthernCalifornia() {
       </Section>
 
       {/* Process snapshot */}
-      <Section kicker="How we work" title="Safe, efficient confined-space cleaning" subtitle="Built for food, feed, plastics, and cement facilities in Southern California." className="pt-0">
+      <Section kicker="How we work" title="Safe, efficient confined-space cleaning" subtitle="Built for food, feed, plastics, and cement facilities in North Carolina." className="pt-0">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border bg-white p-6 shadow-sm">
             <div className="grid gap-3 sm:grid-cols-2">
@@ -202,7 +202,7 @@ export default function CleaningSouthernCalifornia() {
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <img
               src="/silo_img_2.jpg"
-              alt="Silo cleaning operations in Southern California"
+              alt="Silo cleaning operations in North Carolina"
               className="w-full object-cover"
               loading="lazy"
             />
@@ -211,7 +211,7 @@ export default function CleaningSouthernCalifornia() {
       </Section>
 
       {/* Proof / badges */}
-      <Section kicker="Why us" title="SoCal-ready: safety, speed, reliability">
+      <Section kicker="Why us" title="NC-ready: safety, speed, reliability">
         <div className="grid gap-6 sm:grid-cols-3">
           <Stat value="24/7" label="Emergency response" />
           <Stat value=">10yrs" label="Nationwide experience" />
@@ -222,15 +222,15 @@ export default function CleaningSouthernCalifornia() {
       {/* FAQs */}
       <Section
         kicker="FAQ"
-        title="Southern California silo cleaning questions"
+        title="North Carolina silo cleaning questions"
         subtitle="Quick answers about safety, waste handling, and downtime."
         className="pt-0"
       >
         <div className="mr-auto space-y-4">
           {[
             {
-              q: "Do you service Los Angeles and Orange County?",
-              a: "Yes. We service SoCal facilities across Los Angeles, Orange County, the Inland Empire, and beyond, with rapid mobilization for emergencies.",
+              q: "Do you service Raleigh, Charlotte, and statewide?",
+              a: "Yes. We service facilities throughout North Carolina with rapid mobilization.",
             },
             {
               q: "Is cleaning safe in confined spaces?",
@@ -264,15 +264,15 @@ export default function CleaningSouthernCalifornia() {
       <Section className="pt-0">
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border bg-white p-6 shadow-sm sm:flex-row">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">Serving Southern California</h3>
+            <h3 className="text-lg font-semibold text-slate-900">Serving North Carolina</h3>
             <p className="text-slate-600">Call now or request a quote to schedule cleaning.</p>
           </div>
           <div className="flex gap-3">
             <a
-              href="tel:+16574394401"
+              href="tel:18886236050"
               className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
             >
-              <Phone className="h-4 w-4" /> Call (657) 439-4401
+              <Phone className="h-4 w-4" /> Call (888) 623-6050
             </a>
             <a
               href="/quote"

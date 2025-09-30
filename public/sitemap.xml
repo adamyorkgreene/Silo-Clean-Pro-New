@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
+  <url><loc>https://www.silocleanpro.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.silocleanpro.com/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.silocleanpro.com/services</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.silocleanpro.com/contact</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.silocleanpro.com/quote</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Services -->
+  <url><loc>https://www.silocleanpro.com/services/cleaning</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.silocleanpro.com/services/inspection</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.silocleanpro.com/services/sanitation</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.silocleanpro.com/services/maintenance</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.silocleanpro.com/services/specialized</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Location landing pages -->
+  <url><loc>https://www.silocleanpro.com/silo-cleaning-services-atlanta-ga</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.silocleanpro.com/southern-california-silo-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.silocleanpro.com/idaho-silo-cleaning-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.silocleanpro.com/colorado-silo-cleaning-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.silocleanpro.com/north-carolina-silo-cleaning-services</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Blog index and posts (static .html) -->
+  <url><loc>https://www.silocleanpro.com/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.silocleanpro.com/blog/pre-harvest-silo-cleaning-2025.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.silocleanpro.com/blog/sika-silo-sealant-launch.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.silocleanpro.com/blog/why-professional-silo-cleaner.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.silocleanpro.com/blog/grain-bin-sanitation-basics.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.silocleanpro.com/blog/inspection-checkpoints.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>
+

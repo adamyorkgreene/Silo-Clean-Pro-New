@@ -1,6 +1,7 @@
 import Section from "../components/Section.jsx";
 import { NavLink } from "react-router-dom";
 import { getSortedPosts } from "../data/blogPosts.js";
+import { useSEO } from "../lib/useSEO.js";
 
 function formatDate(iso) {
   try {
@@ -16,6 +17,13 @@ function formatDate(iso) {
 
 export default function Blog() {
   const posts = getSortedPosts();
+  useSEO({
+    title: "Blog | Silo Clean Pro",
+    description: "Field notes, safety insights, and best practices for silo cleaning, inspections, and maintenance.",
+    canonical: "https://www.silocleanpro.com/blog",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
 
   return (
     <main className="bg-slate-50">

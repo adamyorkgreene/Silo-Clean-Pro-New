@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Do not index transient conversion pages
+Disallow: /thank-you
+
+# Sitemap location
+Sitemap: https://www.silocleanpro.com/sitemap.xml
+

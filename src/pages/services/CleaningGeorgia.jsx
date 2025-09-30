@@ -2,8 +2,16 @@ import { ShieldCheck, SprayCan, Wind, Bug, Check, ChevronDown, ClipboardCheck, H
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import Stat from "../../components/Stat.jsx";
+import { useSEO } from "../../lib/useSEO.js";
 
 export default function CleaningGeorgia() {
+  useSEO({
+    title: "Silo Cleaning in Atlanta, GA | Silo Clean Pro",
+    description: "Professional Georgia silo cleaning serving Atlanta and statewide. High-volume vacs, bin whips, blasting, sanitation, and 24/7 response.",
+    canonical: "https://www.silocleanpro.com/silo-cleaning-services-atlanta-ga",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   return (
     <main className="bg-slate-50">
       {/* Hero header */}
@@ -278,4 +286,3 @@ export default function CleaningGeorgia() {
     </main>
   );
 }
-

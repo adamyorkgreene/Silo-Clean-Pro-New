@@ -5,6 +5,7 @@ import Section from "../components/Section.jsx";
 import Stat from "../components/Stat.jsx";
 import Pill from "../components/Pill.jsx";
 import { getSortedPosts } from "../data/blogPosts.js";
+import { useSEO } from "../lib/useSEO.js";
 
 /** Background Stream iframe that auto-scales to cover.
  *  Desktop (>=1050px): anchor to TOP (crop bottom more).
@@ -95,6 +96,21 @@ function HeroBackgroundScaledIframe({
 export default function Home() {
   const navigate = useNavigate();
   const latestPosts = getSortedPosts().slice(0, 4);
+  useSEO({
+    title: "Silo Cleaning, Inspection & Sanitation | Silo Clean Pro",
+    description: "Nationwide silo cleaning, inspections, sanitation and maintenance. OSHA-approved, confined-space certified teams with 24/7 emergency response.",
+    canonical: "https://www.silocleanpro.com/",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Silo Clean Pro",
+      url: "https://www.silocleanpro.com/",
+      telephone: "+1-888-623-6050",
+      sameAs: [],
+    },
+  });
   return (
     <main className="bg-slate-50">
       {/* Hero */}

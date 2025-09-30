@@ -2,8 +2,16 @@ import { ShieldCheck, Wrench, ClipboardCheck, Clock, ChevronDown, Check, HardHat
 import Section from "../../components/Section.jsx";
 import Container from "../../components/Container.jsx";
 import Stat from "../../components/Stat.jsx";
+import { useSEO } from "../../lib/useSEO.js";
 
 export default function Maintenance() {
+  useSEO({
+    title: "Silo Maintenance Services | Silo Clean Pro",
+    description: "Preventative silo maintenance programs to minimize downtime and extend asset life. Rapid response teams nationwide.",
+    canonical: "https://www.silocleanpro.com/services/maintenance",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   return (
     <main className="bg-slate-50">
       {/* Hero header */}

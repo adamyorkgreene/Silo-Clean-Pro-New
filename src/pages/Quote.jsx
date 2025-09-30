@@ -1,9 +1,17 @@
 import Page from "./Page.jsx";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSEO } from "../lib/useSEO.js";
 
 export default function Quote() {
   const navigate = useNavigate();
+  useSEO({
+    title: "Request a Quote | Silo Clean Pro",
+    description: "Request a quote for silo cleaning, inspection, sanitation, or maintenance. Fast response from OSHA-approved teams.",
+    canonical: "https://www.silocleanpro.com/quote",
+    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+  });
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");

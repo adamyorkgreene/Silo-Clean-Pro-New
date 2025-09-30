@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, useLocation } from "react-router-dom";
 import Section from "../components/Section.jsx";
 import { blogPosts } from "../data/blogPosts.js";
+import { useSEO } from "../lib/useSEO.js";
 
 function formatDate(iso) {
   try {
@@ -17,6 +18,7 @@ function formatDate(iso) {
 
 export default function BlogPost() {
   const { slug } = useParams();
+  const { pathname } = useLocation();
   const post = blogPosts.find((p) => p.slug === slug);
   const [content, setContent] = useState("");
   const [error, setError] = useState(null);
@@ -103,6 +105,15 @@ export default function BlogPost() {
       </main>
     );
   }
+
+  const canonical = `https://www.silocleanpro.com${pathname || `/blog/${slug}`}`;
+  useSEO({
+    title: `${post.title} | Silo Clean Pro`,
+    description: `${post.title} — Silo Clean Pro blog`,
+    canonical,
+    og: { type: "article", image: post.image || "https://www.silocleanpro.com/og-image.jpg" },
+    twitter: { card: "summary_large_image", image: post.image || "https://www.silocleanpro.com/og-image.jpg" },
+  });
 
   return (
     <main className="bg-slate-50">
