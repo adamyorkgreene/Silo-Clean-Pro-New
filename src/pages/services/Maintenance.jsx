@@ -9,8 +9,8 @@ export default function Maintenance() {
     title: "Silo Maintenance Services | Silo Clean Pro",
     description: "Preventative silo maintenance programs to minimize downtime and extend asset life. Rapid response teams nationwide.",
     canonical: "https://www.silocleanpro.com/services/maintenance",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

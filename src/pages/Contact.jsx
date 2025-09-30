@@ -8,8 +8,8 @@ export default function Contact() {
     title: "Contact Us | Silo Clean Pro",
     description: "Get in touch for silo cleaning, inspections, sanitation, and maintenance. Call (888) 623-6050 or send a message.",
     canonical: "https://www.silocleanpro.com/contact",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   const navigate = useNavigate();
   const [name, setName] = useState("");

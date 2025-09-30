@@ -9,8 +9,8 @@ export default function CleaningSouthernCalifornia() {
     title: "Southern California Silo Cleaning | Silo Clean Pro",
     description: "Silo cleaning across Los Angeles, Orange County, and the Inland Empire. West Coast service since 2004.",
     canonical: "https://www.silocleanpro.com/southern-california-silo-services",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

@@ -111,8 +111,8 @@ export default function BlogPost() {
     title: `${post.title} | Silo Clean Pro`,
     description: `${post.title} — Silo Clean Pro blog`,
     canonical,
-    og: { type: "article", image: post.image || "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: post.image || "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "article", image: post.image || "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: post.image || "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
 
   return (

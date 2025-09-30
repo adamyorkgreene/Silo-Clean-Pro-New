@@ -9,8 +9,8 @@ export default function Cleaning() {
     title: "Silo Cleaning Services | Silo Clean Pro",
     description: "Professional silo cleaning for grain, flour, cement ingredients, plastics and more. High-volume vacs, bin whips, blasting, sanitation, and emergency response.",
     canonical: "https://www.silocleanpro.com/services/cleaning",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

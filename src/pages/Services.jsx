@@ -91,8 +91,8 @@ export default function ServicesIndex() {
     title: "Silo Services: Cleaning, Inspection, Sanitation, Maintenance | Silo Clean Pro",
     description: "Full-service silo cleaning, inspection, sanitation, and maintenance. Rapid mobilization and OSHA-approved confined-space technicians.",
     canonical: "https://www.silocleanpro.com/services",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

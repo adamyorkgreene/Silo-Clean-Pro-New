@@ -9,8 +9,8 @@ export default function Specialized() {
     title: "Specialized Silo Cleaning | Silo Clean Pro",
     description: "Plastic and injection molding resin changeovers, KB Systems, dry ice and hydro blasting, and other specialized silo cleaning.",
     canonical: "https://www.silocleanpro.com/services/specialized",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

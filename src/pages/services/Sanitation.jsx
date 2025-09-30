@@ -9,8 +9,8 @@ export default function Sanitation() {
     title: "Silo Sanitation Services | Silo Clean Pro",
     description: "Targeted silo sanitation and infestation remediation for food and feed facilities. GMP-aware practices and documentation.",
     canonical: "https://www.silocleanpro.com/services/sanitation",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

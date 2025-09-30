@@ -9,8 +9,8 @@ export default function Inspection() {
     title: "Silo Inspection Services | Silo Clean Pro",
     description: "Comprehensive silo inspections: structural checks, safety, water intrusion, documentation, and recommendations by experienced technicians.",
     canonical: "https://www.silocleanpro.com/services/inspection",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

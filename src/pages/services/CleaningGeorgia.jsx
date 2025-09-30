@@ -9,8 +9,8 @@ export default function CleaningGeorgia() {
     title: "Silo Cleaning in Atlanta, GA | Silo Clean Pro",
     description: "Professional Georgia silo cleaning serving Atlanta and statewide. High-volume vacs, bin whips, blasting, sanitation, and 24/7 response.",
     canonical: "https://www.silocleanpro.com/silo-cleaning-services-atlanta-ga",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

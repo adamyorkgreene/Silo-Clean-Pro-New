@@ -9,8 +9,8 @@ export default function Quote() {
     title: "Request a Quote | Silo Clean Pro",
     description: "Request a quote for silo cleaning, inspection, sanitation, or maintenance. Fast response from OSHA-approved teams.",
     canonical: "https://www.silocleanpro.com/quote",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");

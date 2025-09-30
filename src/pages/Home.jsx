@@ -100,15 +100,44 @@ export default function Home() {
     title: "Silo Cleaning, Inspection & Sanitation | Silo Clean Pro",
     description: "Nationwide silo cleaning, inspections, sanitation and maintenance. OSHA-approved, confined-space certified teams with 24/7 emergency response.",
     canonical: "https://www.silocleanpro.com/",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
     jsonLd: {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Silo Clean Pro",
-      url: "https://www.silocleanpro.com/",
-      telephone: "+1-888-623-6050",
-      sameAs: [],
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.silocleanpro.com/#org",
+          name: "Silo Clean Pro",
+          url: "https://www.silocleanpro.com/",
+          logo: "https://www.silocleanpro.com/SiloCleanProLogo.svg",
+          description: "Division providing professional silo cleaning, inspections, sanitation, and maintenance.",
+          telephone: "+1-888-623-6050",
+          parentOrganization: {
+            "@type": "Organization",
+            "@id": "https://greeneservices.us/#org",
+            name: "Greene Services, Inc.",
+            url: "https://greeneservices.us/"
+          },
+          sameAs: [
+            "https://www.linkedin.com/showcase/silo-clean-pro"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.silocleanpro.com/#website",
+          url: "https://www.silocleanpro.com/",
+          name: "Silo Clean Pro",
+          publisher: { "@id": "https://www.silocleanpro.com/#org" }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.silocleanpro.com/#service-silo-cleaning",
+          serviceType: "Silo Cleaning Services",
+          provider: { "@id": "https://www.silocleanpro.com/#org" },
+          areaServed: ["United States"]
+        }
+      ]
     },
   });
   return (

@@ -9,8 +9,8 @@ export default function CleaningColorado() {
     title: "Colorado Silo Cleaning Services | Silo Clean Pro",
     description: "Aurora-based silo cleaning across Colorado. High-volume vacs, bin whips, blasting, sanitation, and rapid mobilization.",
     canonical: "https://www.silocleanpro.com/colorado-silo-cleaning-services",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
   return (
     <main className="bg-slate-50">

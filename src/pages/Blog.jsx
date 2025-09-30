@@ -21,8 +21,8 @@ export default function Blog() {
     title: "Blog | Silo Clean Pro",
     description: "Field notes, safety insights, and best practices for silo cleaning, inspections, and maintenance.",
     canonical: "https://www.silocleanpro.com/blog",
-    og: { type: "website", image: "https://www.silocleanpro.com/og-image.jpg" },
-    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-image.jpg" },
+    og: { type: "website", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
+    twitter: { card: "summary_large_image", image: "https://www.silocleanpro.com/og-greeneservices.jpg" },
   });
 
   return (
