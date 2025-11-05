@@ -17,7 +17,7 @@ export default function LogosStrip({ className = "" }) {
       aria-label="Certifications and associations"
     >
       <Container>
-        <div className="flex flex-wrap items-center justify-evenly gap-y-8 sm:gap-y-10 opacity-90">
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:justify-evenly sm:gap-y-10 sm:gap-x-0 opacity-90">
           {logos.map((l) => (
             <img
               key={l.alt}
