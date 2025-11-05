@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Brush, Search, ShieldCheck, Wrench } from "lucide-react";
 import Section from "../components/Section.jsx";
+import LogosStrip from "../components/LogosStrip.jsx";
 import Stat from "../components/Stat.jsx";
 import Pill from "../components/Pill.jsx";
 import { getSortedPosts } from "../data/blogPosts.js";
@@ -207,6 +208,8 @@ export default function Home() {
             </p>
           </div>
         </div>
+        {/* Certifications / Associations logos inside hero for unified section */}
+        <LogosStrip className="relative z-10" />
       </section>
 
       {/* Services overview */}
