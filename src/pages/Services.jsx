@@ -99,7 +99,7 @@ export default function ServicesIndex() {
       {/* HERO (same pattern as Home/About) */}
       <section className="relative isolate overflow-hidden">
         <HeroBackgroundScaledIframe
-          src="https://customer-7l16vj4uw6jxacav.cloudflarestream.com/ef99151817ac90f0a387d5dab5dd2426/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-7l16vj4uw6jxacav.cloudflarestream.com%2Fef99151817ac90f0a387d5dab5dd2426%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+          src="https://customer-7l16vj4uw6jxacav.cloudflarestream.com/534c18fc5600f090d870ea9ca1bbaa57/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-7l16vj4uw6jxacav.cloudflarestream.com%2F534c18fc5600f090d870ea9ca1bbaa57%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
           videoAspect={16 / 9}
           fudgePct={0.30}
           offsetYPercent={10}
