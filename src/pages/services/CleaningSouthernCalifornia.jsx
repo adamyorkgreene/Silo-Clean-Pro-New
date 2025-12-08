@@ -166,7 +166,7 @@ export default function CleaningSouthernCalifornia() {
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 { Icon: ClipboardCheck, t: "Pre-job inspection" },
-                { Icon: HardHat, t: "OSHA + confined-space" },
+                { Icon: HardHat, t: "OSHA + Confined space + constant air monitoring" },
                 { Icon: Wind, t: "High-volume vacs / bin whips" },
                 { Icon: SprayCan, t: "Hydro / dry ice blasting" },
                 { Icon: Bug, t: "Sanitizing applications (as needed)" },
@@ -186,7 +186,7 @@ export default function CleaningSouthernCalifornia() {
               <ul className="mt-2 space-y-2 text-sm text-slate-700">
                 {[
                   "Arrival + safety briefing",
-                  "Confined-space prep & air monitoring",
+                  "Confined-space prep & constant air monitoring",
                   "Material removal with vacs/bin whips",
                   "Targeted blasting or sanitation (if needed)",
                   "Final sweep + verification",

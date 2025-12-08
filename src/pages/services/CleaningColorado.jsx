@@ -78,6 +78,7 @@ export default function CleaningColorado() {
               {[
                 "Hang-up removal",
                 "High-volume vacuums & bin whips",
+                "Confined space entry w/ constant air monitoring",
                 "Vacuum truck services",
                 "Outside cleaning, media blasting & painting",
                 "Hydro blasting & dry ice blasting",
@@ -166,7 +167,7 @@ export default function CleaningColorado() {
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 { Icon: ClipboardCheck, t: "Pre-job inspection" },
-                { Icon: HardHat, t: "OSHA + confined-space" },
+                { Icon: HardHat, t: "OSHA + Confined space + constant air monitoring" },
                 { Icon: Wind, t: "High-volume vacs / bin whips" },
                 { Icon: SprayCan, t: "Hydro / dry ice blasting" },
                 { Icon: Bug, t: "Sanitizing applications (as needed)" },

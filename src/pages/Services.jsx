@@ -179,7 +179,7 @@ export default function ServicesIndex() {
           {[
             {
               t: "Cleaning",
-              d: "Bin whips, high‑CFM vacs, hang‑up & mold removal.",
+              d: "Confined-space entry with air monitoring, high-CFM vacs, hang-up & mold removal.",
               icon: Brush,
               to: "/services/cleaning",
             },
@@ -257,3 +257,4 @@ export default function ServicesIndex() {
     </main>
   );
 }
+

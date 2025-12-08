@@ -222,7 +222,7 @@ export default function Home() {
           {[
             {
               t: "Cleaning",
-              d: "Bin whips, high-volume vacs, hang-up & mold removal.",
+              d: "Confined-space entry with constant air monitoring, high-volume vacs, hang-up & mold removal.",
               icon: Brush
             },
             {
@@ -308,3 +308,4 @@ export default function Home() {
     </main>
   );
 }
+

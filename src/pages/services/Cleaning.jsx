@@ -138,7 +138,7 @@ export default function Cleaning() {
           <div className="rounded-2xl border bg-white p-6 shadow-sm">
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                { Icon: ShieldCheck, t: "OSHA + confined-space" },
+                { Icon: ShieldCheck, t: "OSHA + Confined space + constant air monitoring" },
                 { Icon: Wind, t: "High-volume vacs & bin whips" },
                 { Icon: SprayCan, t: "Dry ice / hydro options" },
                 { Icon: ClipboardCheck, t: "Pre-entry safety briefing" },
