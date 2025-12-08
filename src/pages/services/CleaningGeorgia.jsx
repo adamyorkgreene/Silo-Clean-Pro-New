@@ -77,8 +77,8 @@ export default function CleaningGeorgia() {
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
               {[
                 "Hang-up removal",
+                "Confined space entry + constant air monitoring",
                 "High-volume vacuums & bin whips",
-                "Confined space entry w/ constant air monitoring",
                 "Vacuum truck services",
                 "Outside cleaning, media blasting & painting",
                 "Hydro blasting & dry ice blasting",

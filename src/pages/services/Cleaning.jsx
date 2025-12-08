@@ -71,6 +71,7 @@ export default function Cleaning() {
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
               {[
                 "Hang-up removal",
+                "Confined space entry + constant air monitoring",
                 "High-volume vacuums & bin whips",
                 "Vacuum truck services",
                 "Outside cleaning, media blasting & painting",
