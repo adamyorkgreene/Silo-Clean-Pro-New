@@ -35,7 +35,7 @@ export default function ThankYou() {
   // Fire Google Ads conversion on thank-you page (covers both contact + quote forms)
   useEffect(() => {
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "conversion", { send_to: "AW-17027793247/XJ4_CKKCxc8bEN-Cvrc_" });
+      window.gtag("event", "conversion", { send_to: "AW-17027793247/stAwCL_KktAbEN-Cvrc_" });
     }
   }, []);
 
