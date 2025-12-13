@@ -96,7 +96,7 @@ const transporter = createTransport({
 
 const SITE_NAME = process.env.SITE_NAME || 'Silo Clean Pro';
 const FROM_EMAIL = process.env.FROM_EMAIL || smtpUser || 'no-reply@silocleanpro.com';
-const TO_EMAILS = (process.env.MAIL_TO || 'adam@greeneservices.us,adamyork16@gmail.com,stacey@greeneservices.us')
+const TO_EMAILS = (process.env.MAIL_TO || 'adam@greeneservices.us,stacey@greeneservices.us,madison@greeneservices.us,madisonhwilhelm@gmail.com')
   .split(',')
   .map((x) => x.trim())
   .filter(Boolean);
