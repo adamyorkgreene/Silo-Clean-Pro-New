@@ -148,12 +148,17 @@ app.post('/api/contact', async (req, res) => {
     .filter(Boolean)
     .join('\n');
   try {
-    const info = await sendEmail({ subject: `Contact: ${name}`, replyTo: email, text });
-    return res.status(200).json({ ok: true, id: info.messageId });
-  } catch (err) {
-    console.error('Contact email failed:', err);
-    return res.status(500).json({ ok: false, error: 'Failed to send message.' });
-  }
+      const info = await sendEmail({ 
+        subject: `Contact: ${name}`, 
+        replyTo: email, 
+        text,
+        bcc: process.env.M360_CONTACT_BCC 
+      });
+      return res.status(200).json({ ok: true, id: info.messageId });
+    } catch (err) {
+      console.error('Contact email failed:', err);
+      return res.status(500).json({ ok: false, error: 'Failed to send message.' });
+    }
 });
 
 /* ---------- POST /api/quote ---------- */
