@@ -108,15 +108,16 @@ function sanitize(val) {
 function isEmail(str) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(str || '').trim());
 }
-async function sendEmail({ subject, replyTo, text }) {
+async function sendEmail({ subject, replyTo, text, bcc }) {
   const mailOptions = {
     from: FROM_EMAIL,
     to: TO_EMAILS,
+    bcc: bcc || undefined, // Add this line
     subject,
     text,
     replyTo: isEmail(replyTo) ? replyTo : undefined,
   };
-  // Re-verify if provider closed idle connection
+  
   await transporter.verify().catch(() => {});
   return transporter.sendMail(mailOptions);
 }
@@ -185,12 +186,17 @@ app.post('/api/quote', async (req, res) => {
     .filter(Boolean)
     .join('\n');
   try {
-    const info = await sendEmail({ subject: `Quote: ${name}${company ? ' @ ' + company : ''}`, replyTo: email, text });
-    return res.status(200).json({ ok: true, id: info.messageId });
-  } catch (err) {
-    console.error('Quote email failed:', err);
-    return res.status(500).json({ ok: false, error: 'Failed to send message.' });
-  }
+      const info = await sendEmail({ 
+        subject: `Quote: ${name}${company ? ' @ ' + company : ''}`, 
+        replyTo: email, 
+        text,
+        bcc: process.env.M360_QUOTE_BCC 
+      });
+      return res.status(200).json({ ok: true, id: info.messageId });
+    } catch (err) {
+      console.error('Quote email failed:', err);
+      return res.status(500).json({ ok: false, error: 'Failed to send message.' });
+    }
 });
 
 /* ---------- health endpoints ---------- */
